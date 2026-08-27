@@ -115,6 +115,16 @@
           height="{{ section.settings.background_image.height }}"
         >
       {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a
+          href="{{ section.settings.button_link | default: '#' }}"
+          class="gift-banner__btn gift-banner__btn--main gift-banner__media-btn"
+        >
+          <span>{{ section.settings.button_text }}</span>
+          <span class="gift-banner__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {% endif %}
     </div>
 
     <div class="gift-banner__content">
