@@ -14,7 +14,7 @@
 .shoppable-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 20px;
 }
 
 .shoppable-grid__item {
