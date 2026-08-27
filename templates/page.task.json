@@ -29,6 +29,7 @@
         "top_button_bg_color": "#f6e100",
         "top_button_text_color": "#111111",
         "background_image": "shopify://shop_images/Group_1000008197.jpg",
+        "mobile_background_image": "shopify://shop_images/Frame.jpg",
         "heading": "The Gift Guide",
         "description": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
         "button_text": "Shop now",
