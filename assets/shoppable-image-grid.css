@@ -222,7 +222,9 @@ margin-bottom:51px;
   justify-content: center;
   gap: 10px;
 }
-
+span.arrow {
+    font-size: 29px;
+}
 .product-popup__add-to-cart:disabled {
   opacity: 0.5;
   cursor: not-allowed;
