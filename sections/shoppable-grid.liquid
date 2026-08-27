@@ -174,9 +174,11 @@
 
       // Bind hotspot click listeners FIRST so the popup always opens even if
       // something else below (e.g. auto-add data) fails to parse.
+      var lastAnchorEl = null;
+
       root.querySelectorAll('.shoppable-grid__hotspot').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          openPopup(btn.dataset.productHandle);
+          openPopup(btn.dataset.productHandle, btn);
         });
       });
 
@@ -254,12 +256,48 @@
         };
       }
 
-      function openPopup(handle) {
+      function positionPopup(anchorEl) {
+        if (!anchorEl) return;
+        var margin = 12;
+        var gap = 14;
+        var btnRect = anchorEl.getBoundingClientRect();
+        var popupRect = popup.getBoundingClientRect();
+        var viewportWidth = window.innerWidth;
+        var viewportHeight = window.innerHeight;
+        var popupWidth = popupRect.width;
+        var popupHeight = popupRect.height;
+
+        var left = btnRect.left + btnRect.width / 2 - popupWidth / 2;
+        left = Math.max(margin, Math.min(left, viewportWidth - popupWidth - margin));
+
+        var placeAbove = true;
+        var top = btnRect.top - popupHeight - gap;
+        if (top < margin) {
+          placeAbove = false;
+          top = btnRect.bottom + gap;
+          if (top + popupHeight > viewportHeight - margin) {
+            top = Math.max(margin, viewportHeight - margin - popupHeight);
+          }
+        }
+
+        popup.style.left = left + 'px';
+        popup.style.top = top + 'px';
+
+        popup.classList.toggle('product-popup--arrow-down', placeAbove);
+        popup.classList.toggle('product-popup--arrow-up', !placeAbove);
+
+        var arrowLeft = btnRect.left + btnRect.width / 2 - left;
+        arrowLeft = Math.max(18, Math.min(arrowLeft, popupWidth - 18));
+        popup.style.setProperty('--arrow-left', arrowLeft + 'px');
+      }
+
+      function openPopup(handle, anchorEl) {
         var data = getProductData(handle);
         if (!data) return;
         currentProduct = data;
         selectedOptions = {};
         optionDefaults = {};
+        lastAnchorEl = anchorEl || lastAnchorEl;
 
         titleEl.textContent = data.title;
         descEl.textContent = data.description;
@@ -283,8 +321,12 @@
         });
 
         updatePriceAndImage();
+
+        popup.style.visibility = 'hidden';
         overlay.hidden = false;
         document.body.style.overflow = 'hidden';
+        positionPopup(lastAnchorEl);
+        popup.style.visibility = 'visible';
         closeBtn.focus();
       }
 
@@ -292,7 +334,12 @@
         overlay.hidden = true;
         document.body.style.overflow = '';
         currentProduct = null;
+        lastAnchorEl = null;
       }
+
+      window.addEventListener('resize', function () {
+        if (!overlay.hidden && lastAnchorEl) positionPopup(lastAnchorEl);
+      });
 
       function addToCart(items) {
         return fetch('/cart/add.js', {
