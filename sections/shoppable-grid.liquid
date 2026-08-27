@@ -11,7 +11,8 @@
       {% if product %}
         {% assign block_image = block.settings.custom_image | default: product.featured_image %}
         <div class="shoppable-grid__item" {{ block.shopify_attributes }}>
-          {% if block_image %}
+          {% capture grid_img_src %}{% if block_image %}{{ block_image | image_url: width: 800 }}{% endif %}{% endcapture %}
+          {% unless grid_img_src contains 'Liquid error' or grid_img_src == blank %}
             <img
               class="shoppable-grid__image"
               src="{{ block_image | image_url: width: 800 }}"
@@ -22,7 +23,7 @@
               width="{{ block_image.width }}"
               height="{{ block_image.height }}"
             >
-          {% endif %}
+          {% endunless %}
           <button
             type="button"
             class="shoppable-grid__hotspot"
@@ -41,7 +42,8 @@
               "price": {{ product.price | json }},
               "compareAtPrice": {{ product.compare_at_price | json }},
               "description": {{ product.description | strip_html | truncatewords: 40 | json }},
-              "image": {{ product.featured_image | image_url: width: 600 | json }},
+              {% capture product_image_json %}{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | json }}{% endif %}{% endcapture %}
+              "image": {% if product_image_json contains 'Liquid error' or product_image_json == blank %}null{% else %}{{ product_image_json }}{% endif %},
               "options": {{ product.options_with_values | json }},
               "variants": [
                 {% for variant in product.variants %}
@@ -50,7 +52,8 @@
                   "title": {{ variant.title | json }},
                   "price": {{ variant.price | json }},
                   "available": {{ variant.available | json }},
-                  "image": {{ variant.featured_image.src | image_url: width: 600 | json }},
+                  {% capture variant_image_json %}{% if variant.featured_image %}{{ variant.featured_image | image_url: width: 600 | json }}{% endif %}{% endcapture %}
+                  "image": {% if variant_image_json contains 'Liquid error' or variant_image_json == blank %}null{% else %}{{ variant_image_json }}{% endif %},
                   "option1": {{ variant.option1 | json }},
                   "option2": {{ variant.option2 | json }},
                   "option3": {{ variant.option3 | json }}
@@ -387,40 +390,63 @@
   ],
   "blocks": [
     {
-      "type": "product",
-      "name": "Product",
+      "type": "product_1",
+      "name": "Product 1",
       "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        },
-        {
-          "type": "image_picker",
-          "id": "custom_image",
-          "label": "Custom image (optional)",
-          "info": "Defaults to the product's featured image if left empty."
-        },
-        {
-          "type": "range",
-          "id": "position_x",
-          "label": "Hotspot horizontal position",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "unit": "%",
-          "default": 85
-        },
-        {
-          "type": "range",
-          "id": "position_y",
-          "label": "Hotspot vertical position",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "unit": "%",
-          "default": 15
-        }
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom image (optional)", "info": "Defaults to the product's featured image if left empty." },
+        { "type": "range", "id": "position_x", "label": "Hotspot horizontal position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 68 },
+        { "type": "range", "id": "position_y", "label": "Hotspot vertical position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 48 }
+      ]
+    },
+    {
+      "type": "product_2",
+      "name": "Product 2",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom image (optional)", "info": "Defaults to the product's featured image if left empty." },
+        { "type": "range", "id": "position_x", "label": "Hotspot horizontal position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 78 },
+        { "type": "range", "id": "position_y", "label": "Hotspot vertical position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 45 }
+      ]
+    },
+    {
+      "type": "product_3",
+      "name": "Product 3",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom image (optional)", "info": "Defaults to the product's featured image if left empty." },
+        { "type": "range", "id": "position_x", "label": "Hotspot horizontal position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 60 },
+        { "type": "range", "id": "position_y", "label": "Hotspot vertical position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 18 }
+      ]
+    },
+    {
+      "type": "product_4",
+      "name": "Product 4",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom image (optional)", "info": "Defaults to the product's featured image if left empty." },
+        { "type": "range", "id": "position_x", "label": "Hotspot horizontal position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 58 },
+        { "type": "range", "id": "position_y", "label": "Hotspot vertical position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 25 }
+      ]
+    },
+    {
+      "type": "product_5",
+      "name": "Product 5",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom image (optional)", "info": "Defaults to the product's featured image if left empty." },
+        { "type": "range", "id": "position_x", "label": "Hotspot horizontal position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 40 },
+        { "type": "range", "id": "position_y", "label": "Hotspot vertical position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 45 }
+      ]
+    },
+    {
+      "type": "product_6",
+      "name": "Product 6",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom image (optional)", "info": "Defaults to the product's featured image if left empty." },
+        { "type": "range", "id": "position_x", "label": "Hotspot horizontal position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 68 },
+        { "type": "range", "id": "position_y", "label": "Hotspot vertical position", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 28 }
       ]
     }
   ],
@@ -429,12 +455,12 @@
     {
       "name": "Shoppable image grid",
       "blocks": [
-        { "type": "product" },
-        { "type": "product" },
-        { "type": "product" },
-        { "type": "product" },
-        { "type": "product" },
-        { "type": "product" }
+        { "type": "product_1" },
+        { "type": "product_2" },
+        { "type": "product_3" },
+        { "type": "product_4" },
+        { "type": "product_5" },
+        { "type": "product_6" }
       ]
     }
   ]
