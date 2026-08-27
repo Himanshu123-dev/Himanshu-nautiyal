@@ -60,7 +60,6 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Popup: positioned purely with CSS, anchored to its own grid item */
 .product-popup-backdrop {
   position: fixed;
   inset: 0;
@@ -81,7 +80,6 @@
   width: min(325px, calc(100vw - 24px));
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   z-index: 1001;
 }
 
