@@ -74,14 +74,13 @@
 
 .product-popup {
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  width: min(400px, calc(100vw - 24px));
+  width: min(325px, calc(100vw - 24px));
   max-height: 90vh;
   overflow-y: auto;
-  border-radius: 6px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   z-index: 1001;
 }
