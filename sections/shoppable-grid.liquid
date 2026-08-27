@@ -10,49 +10,92 @@
       {% assign product = block.settings.product %}
       {% if product %}
         {% assign block_image = block.settings.custom_image | default: product.featured_image %}
-        <div class="shoppable-grid__item" {{ block.shopify_attributes }}>
-          {% capture grid_img_src %}{% if block_image %}{{ block_image | image_url: width: 800 }}{% endif %}{% endcapture %}
-          {% unless grid_img_src contains 'Liquid error' or grid_img_src == blank %}
-            <img
-              class="shoppable-grid__image"
-              src="{{ block_image | image_url: width: 800 }}"
-              srcset="{{ block_image | image_url: width: 400 }} 400w, {{ block_image | image_url: width: 800 }} 800w, {{ block_image | image_url: width: 1200 }} 1200w"
-              sizes="(min-width: 750px) 33vw, 50vw"
-              alt="{{ block_image.alt | default: product.title | escape }}"
-              loading="lazy"
-              width="{{ block_image.width }}"
-              height="{{ block_image.height }}"
-            >
-          {% endunless %}
-          <button
-            type="button"
-            class="shoppable-grid__hotspot"
-            style="left: {{ block.settings.position_x }}%; top: {{ block.settings.position_y }}%;"
-            data-product-handle="{{ product.handle }}"
-            aria-label="Quick view {{ product.title | escape }}"
-          >
-            <span aria-hidden="true">+</span>
-          </button>
+        {% assign popup_id = 'product-popup-' | append: product.id | append: '-' | append: section.id %}
 
-          <script type="application/json" id="product-json-{{ product.handle }}-{{ section.id }}">
-            {
-              "id": {{ product.id | json }},
-              "title": {{ product.title | json }},
-              "handle": {{ product.handle | json }},
-              "price": {{ product.price | json }},
-              "compareAtPrice": {{ product.compare_at_price | json }},
-              "description": {{ product.description | strip_html | truncatewords: 40 | json }},
-              {% capture product_image_json %}{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | json }}{% endif %}{% endcapture %}
-              "image": {% if product_image_json contains 'Liquid error' or product_image_json == blank %}null{% else %}{{ product_image_json }}{% endif %},
-              "options": {{ product.options_with_values | json }},
-              "variants": [
+        <div class="shoppable-grid__item" {{ block.shopify_attributes }}>
+          <div class="shoppable-grid__image-wrap">
+            {% capture grid_img_src %}{% if block_image %}{{ block_image | image_url: width: 800 }}{% endif %}{% endcapture %}
+            {% unless grid_img_src contains 'Liquid error' or grid_img_src == blank %}
+              <img
+                class="shoppable-grid__image"
+                src="{{ block_image | image_url: width: 800 }}"
+                srcset="{{ block_image | image_url: width: 400 }} 400w, {{ block_image | image_url: width: 800 }} 800w, {{ block_image | image_url: width: 1200 }} 1200w"
+                sizes="(min-width: 750px) 33vw, 50vw"
+                alt="{{ block_image.alt | default: product.title | escape }}"
+                loading="lazy"
+                width="{{ block_image.width }}"
+                height="{{ block_image.height }}"
+              >
+            {% endunless %}
+            <button
+              type="button"
+              class="shoppable-grid__hotspot"
+              style="left: {{ block.settings.position_x }}%; top: {{ block.settings.position_y }}%;"
+              data-popup-target="{{ popup_id }}"
+              aria-label="Quick view {{ product.title | escape }}"
+              aria-expanded="false"
+              aria-controls="{{ popup_id }}"
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+
+          <div class="product-popup" id="{{ popup_id }}" role="dialog" aria-modal="true" aria-labelledby="{{ popup_id }}-title" hidden>
+            <button type="button" class="product-popup__close" aria-label="Close">&times;</button>
+            <div class="product-popup__content">
+              <div class="product-popup__header">
+                <div class="product-popup__media">
+                  {% capture popup_img_src %}{% if product.featured_image %}{{ product.featured_image | image_url: width: 400 }}{% endif %}{% endcapture %}
+                  {% unless popup_img_src contains 'Liquid error' or popup_img_src == blank %}
+                    <img class="product-popup__image" src="{{ popup_img_src }}" alt="{{ product.title | escape }}">
+                  {% endunless %}
+                </div>
+                <div class="product-popup__header-text">
+                  <h3 class="product-popup__title" id="{{ popup_id }}-title">{{ product.title }}</h3>
+                  <p class="product-popup__price" data-base-price="{{ product.price }}">{{ product.price | money }}</p>
+                  <p class="product-popup__description">{{ product.description | strip_html | truncatewords: 40 }}</p>
+                </div>
+              </div>
+
+              {% for option in product.options_with_values %}
+                {% assign option_name_lower = option.name | downcase %}
+                {% if option_name_lower contains 'color' or option_name_lower contains 'colour' %}
+                  <div class="product-popup__option product-popup__option--color" data-option-index="{{ forloop.index }}" data-option-name="{{ option.name | escape }}">
+                    <label class="product-popup__option-label">{{ option.name }}</label>
+                    <div class="product-popup__swatches">
+                      {% for value in option.values %}
+                        <button type="button" class="product-popup__swatch{% if forloop.first %} is-selected{% endif %}" data-value="{{ value | escape }}">{{ value }}</button>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% else %}
+                  <div class="product-popup__option product-popup__option--dropdown" data-option-index="{{ forloop.index }}" data-option-name="{{ option.name | escape }}">
+                    <label class="product-popup__option-label">{{ option.name }}</label>
+                    <select class="product-popup__size-select">
+                      <option value="" selected disabled>Choose your {{ option.name | downcase }}</option>
+                      {% for value in option.values %}
+                        <option value="{{ value | escape }}">{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% endif %}
+              {% endfor %}
+
+              <button type="button" class="product-popup__add-to-cart">
+                <span class="product-popup__add-to-cart-text">ADD TO CART</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+              <p class="product-popup__message" aria-live="polite"></p>
+            </div>
+
+            <script type="application/json" class="product-popup__variants-json">
+              [
                 {% for variant in product.variants %}
                 {
                   "id": {{ variant.id | json }},
-                  "title": {{ variant.title | json }},
                   "price": {{ variant.price | json }},
                   "available": {{ variant.available | json }},
-                  {% capture variant_image_json %}{% if variant.featured_image %}{{ variant.featured_image | image_url: width: 600 | json }}{% endif %}{% endcapture %}
+                  {% capture variant_image_json %}{% if variant.featured_image %}{{ variant.featured_image | image_url: width: 400 | json }}{% endif %}{% endcapture %}
                   "image": {% if variant_image_json contains 'Liquid error' or variant_image_json == blank %}null{% else %}{{ variant_image_json }}{% endif %},
                   "option1": {{ variant.option1 | json }},
                   "option2": {{ variant.option2 | json }},
@@ -60,12 +103,14 @@
                 }{% unless forloop.last %},{% endunless %}
                 {% endfor %}
               ]
-            }
-          </script>
+            </script>
+          </div>
         </div>
       {% endif %}
     {% endfor %}
   </div>
+
+  <div class="product-popup-backdrop" id="product-popup-backdrop-{{ section.id }}" hidden></div>
 
   {% comment %} Data describing the product that must be auto-added when the trigger combo is selected {% endcomment %}
   {% assign auto_add_product = section.settings.auto_add_product %}
@@ -78,40 +123,6 @@
       "triggerSize": {{ section.settings.trigger_size | json }}
     }
   </script>
-
-  <div class="product-popup-overlay" id="product-popup-overlay-{{ section.id }}" hidden>
-    <div class="product-popup" role="dialog" aria-modal="true" aria-labelledby="product-popup-title-{{ section.id }}">
-      <button type="button" class="product-popup__close" aria-label="Close">&times;</button>
-      <div class="product-popup__content">
-        <div class="product-popup__header">
-          <div class="product-popup__media">
-            <img class="product-popup__image" src="" alt="">
-          </div>
-          <div class="product-popup__header-text">
-            <h3 class="product-popup__title" id="product-popup-title-{{ section.id }}"></h3>
-            <p class="product-popup__price"></p>
-            <p class="product-popup__description"></p>
-          </div>
-        </div>
-
-        <div class="product-popup__option product-popup__option--color" hidden>
-          <label class="product-popup__option-label"></label>
-          <div class="product-popup__swatches"></div>
-        </div>
-
-        <div class="product-popup__option product-popup__option--size" hidden>
-          <label class="product-popup__option-label"></label>
-          <select class="product-popup__size-select"></select>
-        </div>
-
-        <button type="button" class="product-popup__add-to-cart">
-          <span class="product-popup__add-to-cart-text">ADD TO CART</span>
-          <span aria-hidden="true">&rarr;</span>
-        </button>
-        <p class="product-popup__message" aria-live="polite"></p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <script>
@@ -128,26 +139,24 @@
       }
     }
 
+    function addToCart(items) {
+      return fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ items: items })
+      }).then(function (res) {
+        if (!res.ok) return res.json().then(function (err) { throw err; });
+        return res.json();
+      });
+    }
+
     function init() {
       var root = document.getElementById('shoppable-grid-' + sectionId);
       if (!root || root.dataset.initialized === 'true') return;
       root.dataset.initialized = 'true';
 
-      var overlay = document.getElementById('product-popup-overlay-' + sectionId);
-      var popup = overlay.querySelector('.product-popup');
-      var closeBtn = overlay.querySelector('.product-popup__close');
-      var imageEl = overlay.querySelector('.product-popup__image');
-      var titleEl = overlay.querySelector('.product-popup__title');
-      var priceEl = overlay.querySelector('.product-popup__price');
-      var descEl = overlay.querySelector('.product-popup__description');
-      var colorWrap = overlay.querySelector('.product-popup__option--color');
-      var colorLabel = colorWrap.querySelector('.product-popup__option-label');
-      var swatchesEl = overlay.querySelector('.product-popup__swatches');
-      var sizeWrap = overlay.querySelector('.product-popup__option--size');
-      var sizeLabel = sizeWrap.querySelector('.product-popup__option-label');
-      var sizeSelect = overlay.querySelector('.product-popup__size-select');
-      var addToCartBtn = overlay.querySelector('.product-popup__add-to-cart');
-      var messageEl = overlay.querySelector('.product-popup__message');
+      var backdrop = document.getElementById('product-popup-backdrop-' + sectionId);
+      var openPopupEl = null;
 
       var autoAddData = null;
       try {
@@ -157,258 +166,180 @@
         console.error('Shoppable grid: could not parse auto-add product data.', err);
       }
 
-      var currentProduct = null;
-      var selectedOptions = {};
-      var optionDefaults = {};
-
-      function getProductData(handle) {
-        var el = document.getElementById('product-json-' + handle + '-' + sectionId);
-        if (!el) return null;
-        try {
-          return JSON.parse(el.textContent);
-        } catch (err) {
-          console.error('Shoppable grid: could not parse product data for "' + handle + '".', err);
-          return null;
-        }
+      function closeAllPopups() {
+        root.querySelectorAll('.product-popup').forEach(function (p) {
+          p.hidden = true;
+        });
+        root.querySelectorAll('.shoppable-grid__hotspot').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+        });
+        if (backdrop) backdrop.hidden = true;
+        document.body.style.overflow = '';
+        openPopupEl = null;
       }
 
-      // Bind hotspot click listeners FIRST so the popup always opens even if
-      // something else below (e.g. auto-add data) fails to parse.
-      var lastAnchorEl = null;
+      function bindPopup(popupEl) {
+        if (popupEl.dataset.bound === 'true') return;
+        popupEl.dataset.bound = 'true';
+
+        var variantsJsonEl = popupEl.querySelector('.product-popup__variants-json');
+        var variants = [];
+        try {
+          variants = variantsJsonEl ? JSON.parse(variantsJsonEl.textContent) : [];
+        } catch (err) {
+          console.error('Shoppable grid: could not parse variant data.', err);
+        }
+
+        var priceEl = popupEl.querySelector('.product-popup__price');
+        var imageEl = popupEl.querySelector('.product-popup__image');
+        var addToCartBtn = popupEl.querySelector('.product-popup__add-to-cart');
+        var messageEl = popupEl.querySelector('.product-popup__message');
+        var basePrice = parseInt(priceEl ? priceEl.dataset.basePrice : '0', 10);
+        var baseImage = imageEl ? imageEl.getAttribute('src') : '';
+
+        var selectedOptions = {};
+        var optionDefaults = {};
+        var optionMeta = [];
+
+        popupEl.querySelectorAll('.product-popup__option').forEach(function (optEl) {
+          var index = parseInt(optEl.dataset.optionIndex, 10);
+          var name = optEl.dataset.optionName;
+          optionMeta.push({ index: index, name: name });
+
+          if (optEl.classList.contains('product-popup__option--color')) {
+            var swatches = optEl.querySelectorAll('.product-popup__swatch');
+            if (swatches.length) {
+              selectedOptions[name] = swatches[0].dataset.value;
+              optionDefaults[name] = swatches[0].dataset.value;
+            }
+            swatches.forEach(function (swatch) {
+              swatch.addEventListener('click', function () {
+                selectedOptions[name] = swatch.dataset.value;
+                swatches.forEach(function (s) {
+                  s.classList.toggle('is-selected', s === swatch);
+                });
+                update();
+              });
+            });
+          } else {
+            var select = optEl.querySelector('select');
+            if (select) {
+              var firstRealOption = null;
+              for (var i = 0; i < select.options.length; i++) {
+                if (select.options[i].value !== '') {
+                  firstRealOption = select.options[i].value;
+                  break;
+                }
+              }
+              optionDefaults[name] = firstRealOption;
+              select.addEventListener('change', function () {
+                selectedOptions[name] = select.value;
+                update();
+              });
+            }
+          }
+        });
+
+        function getEffectiveValue(name) {
+          var value = selectedOptions[name];
+          if (value === undefined || value === '') value = optionDefaults[name];
+          return value;
+        }
+
+        function findMatchingVariant() {
+          return variants.filter(function (variant) {
+            return optionMeta.every(function (opt) {
+              var key = 'option' + opt.index;
+              var value = getEffectiveValue(opt.name);
+              return value === undefined || variant[key] === value;
+            });
+          })[0] || null;
+        }
+
+        function update() {
+          var variant = findMatchingVariant();
+          var price = variant ? variant.price : basePrice;
+          if (priceEl) priceEl.textContent = formatMoney(price);
+          var img = (variant && variant.image) || baseImage;
+          if (img && imageEl) imageEl.src = img;
+
+          if (variant && !variant.available) {
+            addToCartBtn.disabled = true;
+            messageEl.textContent = 'This combination is currently unavailable.';
+          } else {
+            addToCartBtn.disabled = false;
+            messageEl.textContent = '';
+          }
+        }
+
+        addToCartBtn.addEventListener('click', function () {
+          var variant = findMatchingVariant();
+          if (!variant || !variant.available) {
+            messageEl.textContent = 'This combination is currently unavailable.';
+            return;
+          }
+
+          var items = [{ id: variant.id, quantity: 1 }];
+          var autoAdded = false;
+          if (autoAddData && autoAddData.variantId && autoAddData.variantId !== variant.id) {
+            var values = optionMeta.map(function (opt) { return getEffectiveValue(opt.name); });
+            if (values.indexOf(autoAddData.triggerColor) !== -1 && values.indexOf(autoAddData.triggerSize) !== -1) {
+              items.push({ id: autoAddData.variantId, quantity: 1 });
+              autoAdded = true;
+            }
+          }
+
+          addToCartBtn.disabled = true;
+          messageEl.textContent = 'Adding...';
+
+          addToCart(items)
+            .then(function () {
+              messageEl.textContent = autoAdded
+                ? 'Added to cart, plus ' + autoAddData.title + '!'
+                : 'Added to cart!';
+              document.dispatchEvent(new CustomEvent('cart:updated'));
+            })
+            .catch(function () {
+              messageEl.textContent = 'Could not add this item to your cart.';
+            })
+            .finally(function () {
+              addToCartBtn.disabled = false;
+            });
+        });
+
+        popupEl.querySelector('.product-popup__close').addEventListener('click', closeAllPopups);
+
+        update();
+      }
 
       root.querySelectorAll('.shoppable-grid__hotspot').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          var item = btn.closest('.shoppable-grid__item') || btn;
-          openPopup(btn.dataset.productHandle, item);
-        });
-      });
+          var targetId = btn.dataset.popupTarget;
+          var popupEl = document.getElementById(targetId);
+          if (!popupEl) return;
 
-      function findMatchingVariant() {
-        if (!currentProduct) return null;
-        return currentProduct.variants.filter(function (variant) {
-          return currentProduct.options.every(function (opt, index) {
-            var key = 'option' + (index + 1);
-            var value = selectedOptions[opt.name];
-            if (value === undefined || value === '') value = optionDefaults[opt.name];
-            return value === undefined || variant[key] === value;
-          });
-        })[0] || null;
-      }
-
-      function updatePriceAndImage() {
-        var variant = findMatchingVariant();
-        var price = variant ? variant.price : currentProduct.price;
-        priceEl.textContent = formatMoney(price);
-        var img = (variant && variant.image) || currentProduct.image;
-        if (img) imageEl.src = img;
-
-        if (variant && !variant.available) {
-          addToCartBtn.disabled = true;
-          messageEl.textContent = 'This combination is currently unavailable.';
-        } else {
-          addToCartBtn.disabled = false;
-          messageEl.textContent = '';
-        }
-      }
-
-      function renderSwatches(option, index) {
-        colorWrap.hidden = false;
-        colorLabel.textContent = option.name;
-        swatchesEl.innerHTML = '';
-        option.values.forEach(function (value) {
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'product-popup__swatch';
-          btn.textContent = value;
-          btn.dataset.value = value;
-          if (selectedOptions[option.name] === value) btn.classList.add('is-selected');
-          btn.addEventListener('click', function () {
-            selectedOptions[option.name] = value;
-            swatchesEl.querySelectorAll('.product-popup__swatch').forEach(function (b) {
-              b.classList.toggle('is-selected', b === btn);
-            });
-            updatePriceAndImage();
-          });
-          swatchesEl.appendChild(btn);
-        });
-      }
-
-      function renderSizeSelect(option, index) {
-        sizeWrap.hidden = false;
-        sizeLabel.textContent = option.name;
-        sizeSelect.innerHTML = '';
-
-        var placeholder = document.createElement('option');
-        placeholder.value = '';
-        placeholder.textContent = 'Choose your ' + option.name.toLowerCase();
-        placeholder.disabled = true;
-        placeholder.selected = true;
-        sizeSelect.appendChild(placeholder);
-
-        option.values.forEach(function (value) {
-          var opt = document.createElement('option');
-          opt.value = value;
-          opt.textContent = value;
-          sizeSelect.appendChild(opt);
-        });
-        sizeSelect.onchange = function () {
-          selectedOptions[option.name] = sizeSelect.value;
-          updatePriceAndImage();
-        };
-      }
-
-      function positionPopup(anchorEl) {
-        if (!anchorEl) return;
-        var margin = 12;
-        var gap = 14;
-        var anchorRect = anchorEl.getBoundingClientRect();
-        var popupRect = popup.getBoundingClientRect();
-        var viewportWidth = window.innerWidth;
-        var viewportHeight = window.innerHeight;
-        var popupWidth = popupRect.width;
-        var popupHeight = popupRect.height;
-
-        var left = anchorRect.left + anchorRect.width / 2 - popupWidth / 2;
-        left = Math.max(margin, Math.min(left, viewportWidth - popupWidth - margin));
-
-        var placeAbove = true;
-        var top = anchorRect.top - popupHeight - gap;
-        if (top < margin) {
-          placeAbove = false;
-          top = anchorRect.bottom + gap;
-          if (top + popupHeight > viewportHeight - margin) {
-            top = Math.max(margin, viewportHeight - margin - popupHeight);
+          if (openPopupEl && openPopupEl !== popupEl) {
+            openPopupEl.hidden = true;
           }
-        }
 
-        popup.style.left = left + 'px';
-        popup.style.top = top + 'px';
+          bindPopup(popupEl);
+          popupEl.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+          if (backdrop) backdrop.hidden = false;
+          document.body.style.overflow = 'hidden';
+          openPopupEl = popupEl;
 
-        popup.classList.toggle('product-popup--arrow-down', placeAbove);
-        popup.classList.toggle('product-popup--arrow-up', !placeAbove);
-
-        var arrowLeft = anchorRect.left + anchorRect.width / 2 - left;
-        arrowLeft = Math.max(18, Math.min(arrowLeft, popupWidth - 18));
-        popup.style.setProperty('--arrow-left', arrowLeft + 'px');
-      }
-
-      function openPopup(handle, anchorEl) {
-        var data = getProductData(handle);
-        if (!data) return;
-        currentProduct = data;
-        selectedOptions = {};
-        optionDefaults = {};
-        lastAnchorEl = anchorEl || lastAnchorEl;
-
-        titleEl.textContent = data.title;
-        descEl.textContent = data.description;
-        imageEl.src = data.image || '';
-        imageEl.alt = data.title;
-
-        colorWrap.hidden = true;
-        sizeWrap.hidden = true;
-        swatchesEl.innerHTML = '';
-        sizeSelect.innerHTML = '';
-
-        data.options.forEach(function (option, index) {
-          var name = (option.name || '').toLowerCase();
-          optionDefaults[option.name] = option.values[0];
-          if (name.indexOf('color') !== -1 || name.indexOf('colour') !== -1) {
-            selectedOptions[option.name] = option.values[0];
-            renderSwatches(option, index);
-          } else {
-            renderSizeSelect(option, index);
-          }
+          var closeBtn = popupEl.querySelector('.product-popup__close');
+          if (closeBtn) closeBtn.focus();
         });
-
-        updatePriceAndImage();
-
-        popup.style.visibility = 'hidden';
-        overlay.hidden = false;
-        document.body.style.overflow = 'hidden';
-        positionPopup(lastAnchorEl);
-        popup.style.visibility = 'visible';
-        closeBtn.focus();
-      }
-
-      function closePopup() {
-        overlay.hidden = true;
-        document.body.style.overflow = '';
-        currentProduct = null;
-        lastAnchorEl = null;
-      }
-
-      window.addEventListener('resize', function () {
-        if (!overlay.hidden && lastAnchorEl) positionPopup(lastAnchorEl);
       });
 
-      function addToCart(items) {
-        return fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ items: items })
-        }).then(function (res) {
-          if (!res.ok) return res.json().then(function (err) { throw err; });
-          return res.json();
-        });
+      if (backdrop) {
+        backdrop.addEventListener('click', closeAllPopups);
       }
 
-      function getEffectiveOptionValues() {
-        if (!currentProduct) return [];
-        return currentProduct.options.map(function (opt) {
-          var value = selectedOptions[opt.name];
-          if (value === undefined || value === '') value = optionDefaults[opt.name];
-          return value;
-        });
-      }
-
-      function shouldAutoAdd() {
-        if (!autoAddData || !autoAddData.variantId) return false;
-        var values = getEffectiveOptionValues();
-        return (
-          values.indexOf(autoAddData.triggerColor) !== -1 &&
-          values.indexOf(autoAddData.triggerSize) !== -1
-        );
-      }
-
-      addToCartBtn.addEventListener('click', function () {
-        var variant = findMatchingVariant();
-        if (!variant || !variant.available) {
-          messageEl.textContent = 'This combination is currently unavailable.';
-          return;
-        }
-
-        var items = [{ id: variant.id, quantity: 1 }];
-        var autoAdded = false;
-        if (shouldAutoAdd() && autoAddData.variantId !== variant.id) {
-          items.push({ id: autoAddData.variantId, quantity: 1 });
-          autoAdded = true;
-        }
-
-        addToCartBtn.disabled = true;
-        messageEl.textContent = 'Adding...';
-
-        addToCart(items)
-          .then(function () {
-            messageEl.textContent = autoAdded
-              ? 'Added to cart, plus ' + autoAddData.title + '!'
-              : 'Added to cart!';
-            document.dispatchEvent(new CustomEvent('cart:updated'));
-          })
-          .catch(function () {
-            messageEl.textContent = 'Could not add this item to your cart.';
-          })
-          .finally(function () {
-            addToCartBtn.disabled = false;
-          });
-      });
-
-      closeBtn.addEventListener('click', closePopup);
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closePopup();
-      });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !overlay.hidden) closePopup();
+        if (e.key === 'Escape' && openPopupEl) closeAllPopups();
       });
     }
 
