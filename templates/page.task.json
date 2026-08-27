@@ -11,13 +11,107 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "gift_guide_banner_9XApzL": {
+      "type": "gift-guide-banner",
+      "name": "Gift guide banner",
+      "settings": {
+        "logo_text": "TISSO VISON",
+        "announcement_text": "Find the ideal gift for your loved ones.",
+        "top_button_text": "Choose gift",
+        "top_button_link": "",
+        "topbar_bg_color": "#F4F3F1",
+        "top_button_bg_color": "#F6E100",
+        "top_button_text_color": "#111111",
+        "heading": "The Gift Guide",
+        "description": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
+        "button_text": "Shop now",
+        "button_link": "",
+        "text_color": "#111111",
+        "button_bg_color": "#111111",
+        "button_text_color": "#FFFFFF",
+        "bottom_text": "Sustainable, ethically made clothes in sizes XXS to 6XL",
+        "bottombar_bg_color": "#F4F3F1",
+        "bottombar_text_color": "#111111"
+      }
+    },
+    "shoppable_grid_gVN88F": {
+      "type": "shoppable-grid",
+      "blocks": {
+        "product_R9Kzky": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "position_x": 85,
+            "position_y": 15
+          }
+        },
+        "product_GnjgaQ": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "position_x": 85,
+            "position_y": 15
+          }
+        },
+        "product_zjzQcH": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top",
+            "position_x": 85,
+            "position_y": 15
+          }
+        },
+        "product_ghyFRB": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag",
+            "position_x": 85,
+            "position_y": 15
+          }
+        },
+        "product_kFH86h": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top",
+            "position_x": 85,
+            "position_y": 20
+          }
+        },
+        "product_D3DREh": {
+          "type": "product",
+          "settings": {
+            "product": "floral-white-top",
+            "position_x": 85,
+            "position_y": 28
+          }
+        }
+      },
+      "block_order": [
+        "product_R9Kzky",
+        "product_GnjgaQ",
+        "product_zjzQcH",
+        "product_ghyFRB",
+        "product_kFH86h",
+        "product_D3DREh"
+      ],
+      "name": "Shoppable image grid",
+      "settings": {
+        "heading": "Tisso vison in the wild",
+        "auto_add_product": "",
+        "trigger_color": "Black",
+        "trigger_size": "Medium"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "gift_guide_banner_9XApzL",
+    "shoppable_grid_gVN88F"
   ]
 }
