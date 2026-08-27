@@ -182,16 +182,17 @@
   font-size: 13px;
   cursor: pointer;
   color: #222;
+  width:137px;
 }
 
 .product-popup__swatch:last-child {
   border-right: none;
 }
 
-.product-popup__swatch.is-selected {
+/* .product-popup__swatch.is-selected {
   background: #222;
   color: #fff;
-}
+} */
 
 .product-popup__size-select {
   width: 100%;
