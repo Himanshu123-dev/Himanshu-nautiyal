@@ -1,10 +1,7 @@
-
-
 .gift-banner {
   width: 100%;
   border: 1px solid #eee;
   overflow: hidden;
-  margin-bottom:90px;
 }
 
 /* Top bar */
@@ -19,18 +16,78 @@
 
 .gift-banner__logo {
   font-weight: 700;
-  font-family: "Jost", sans-serif;
   letter-spacing: 0.08em;
   font-size: 15px;
   white-space: nowrap;
 }
 
 .gift-banner__announcement {
-  font-size: 16px;
-  font-family: "Jost", sans-serif;
+  font-size: 13px;
   color: #333;
   text-align: center;
   flex: 1;
+}
+
+/* Mobile hamburger toggle */
+.gift-banner__menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gift-banner__menu-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+}
+
+.gift-banner__menu-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #111;
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+
+.gift-banner__menu-icon span:nth-child(1) {
+  top: 0;
+}
+
+.gift-banner__menu-icon span:nth-child(2) {
+  top: 6px;
+}
+
+.gift-banner__menu-icon span:nth-child(3) {
+  top: 12px;
+}
+
+.gift-banner__menu-toggle[aria-expanded='true'] .gift-banner__menu-icon span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.gift-banner__menu-toggle[aria-expanded='true'] .gift-banner__menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.gift-banner__menu-toggle[aria-expanded='true'] .gift-banner__menu-icon span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile dropdown panel (hidden on desktop, collapsed by default on mobile) */
+.gift-banner__mobile-panel {
+  display: none;
 }
 
 /* Hero */
@@ -38,7 +95,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 780px;
+  min-height: 560px;
   overflow: hidden;
 }
 
@@ -65,28 +122,26 @@
 .gift-banner__content {
   position: relative;
   z-index: 1;
+  max-width: 460px;
   padding: 40px 56px;
   color: var(--heading-color, #111);
-  top:24%;
 }
 
 .gift-banner__heading {
-    font-family: "Jost", sans-serif;
-  font-size: 70px;
+  font-size: 44px;
   line-height: 1.1;
-  margin: 0 0 50px;
-  font-weight: 500px;
-  font-style:normal;
+  margin: 0 0 20px;
+  font-weight: 700;
   color: var(--heading-color, #111);
 }
 
 .gift-banner__description {
-  font-family: "Jost", sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.6;
-  margin: 0 0 50px;
-  max-width: 500px;
+  margin: 0 0 24px;
+  max-width: 360px;
   color: var(--heading-color, #111);
+  opacity: 0.85;
 }
 
 /* Bottom bar */
@@ -98,8 +153,7 @@
 
 .gift-banner__bottombar p {
   margin: 0;
-  font-family: "Jost", sans-serif;
-  font-size: 16px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--bottombar-color, #111);
@@ -111,9 +165,8 @@
   align-items: center;
   gap: 10px;
   padding: 13px 24px;
-  font-family: "Jost", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
@@ -175,16 +228,45 @@
 
 @media (max-width: 749px) {
   .gift-banner__topbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
     padding: 12px 16px;
-    gap: 10px;
+    gap: 14px;
   }
 
-  .gift-banner__announcement {
-    order: 3;
-    flex: 1 1 100%;
+  .gift-banner__menu-toggle {
+    display: flex;
+  }
+
+  .gift-banner__topbar > .gift-banner__announcement,
+  .gift-banner__topbar > .gift-banner__btn--top {
+    display: none;
+  }
+
+  .gift-banner__mobile-panel {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--topbar-bg, #f4f3f1);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: max-height 0.35s ease;
+  }
+
+  .gift-banner__mobile-panel.is-open {
+    max-height: 200px;
+  }
+
+  .gift-banner__mobile-announcement {
+    margin: 0;
+    padding: 16px 20px 0;
+    font-size: 13px;
+    color: #333;
+  }
+
+  .gift-banner__mobile-btn {
+    margin: 14px auto 20px;
   }
 
   .gift-banner__bg--desktop-only {
