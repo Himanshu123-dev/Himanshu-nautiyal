@@ -1,3 +1,7 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+
 .gift-banner {
   width: 100%;
   border: 1px solid #eee;
@@ -67,10 +71,12 @@
 }
 
 .gift-banner__heading {
+    font-family: "Jost", sans-serif;
   font-size: 44px;
   line-height: 1.1;
   margin: 0 0 20px;
-  font-weight: 700;
+  font-weight: 500;
+  font-style:normal;
   color: var(--heading-color, #111);
 }
 
