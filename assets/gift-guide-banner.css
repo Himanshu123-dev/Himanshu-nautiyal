@@ -119,6 +119,10 @@
   display: none;
 }
 
+.gift-banner__media-btn {
+  display: none;
+}
+
 .gift-banner__content {
   position: relative;
   z-index: 1;
@@ -278,24 +282,58 @@
   }
 
   .gift-banner__hero {
-    min-height: 420px;
-    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
   }
 
   .gift-banner__content {
+    order: 1;
+    position: static;
+    z-index: auto;
     max-width: 100%;
-    padding: 24px 20px 32px;
+    padding: 32px 20px 24px;
+    text-align: center;
+    background: #fff;
+  }
+
+  .gift-banner__content .gift-banner__btn--main {
+    display: none;
+  }
+
+  .gift-banner__media {
+    order: 2;
+    position: relative;
+    inset: auto;
+    z-index: auto;
+  }
+
+  .gift-banner__bg {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .gift-banner__media-btn {
+    display: inline-flex;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
   }
 
   .gift-banner__heading {
-    font-size: 28px;
-    margin-bottom: 14px;
+    font-size: 26px;
+    margin-bottom: 12px;
   }
 
   .gift-banner__description {
     font-size: 13px;
     max-width: 100%;
-    margin-bottom: 18px;
+    margin: 0;
   }
 
   .gift-banner__btn {
@@ -305,11 +343,7 @@
 }
 
 @media (max-width: 480px) {
-  .gift-banner__hero {
-    min-height: 380px;
-  }
-
   .gift-banner__heading {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
