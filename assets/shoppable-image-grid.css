@@ -59,12 +59,8 @@
 .product-popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  padding: 16px;
 }
 
 .product-popup-overlay[hidden] {
@@ -73,12 +69,32 @@
 
 .product-popup {
   background: #fff;
-  width: 100%;
-  max-width: 318px;
+  width: min(400px, calc(100vw - 24px));
+  max-height: 90vh;
   overflow-y: auto;
-  position: relative;
-  border-radius: 2px;
+  position: fixed;
+  border-radius: 6px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.product-popup--arrow-down::after,
+.product-popup--arrow-up::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  left: var(--arrow-left, 50%);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.product-popup--arrow-down::after {
+  bottom: -7px;
+}
+
+.product-popup--arrow-up::after {
+  top: -7px;
 }
 
 .product-popup__close {
@@ -96,6 +112,9 @@
 
 .product-popup__content {
   padding: 24px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
 }
 
 .product-popup__header {
