@@ -103,7 +103,7 @@
       "name": "Shoppable image grid",
       "settings": {
         "heading": "Tisso vison in the wild",
-        "auto_add_product": "blue-silk-tuxedo",
+        "auto_add_product": "",
         "trigger_color": "Black",
         "trigger_size": "Medium"
       }
