@@ -190,7 +190,10 @@
 .product-popup__swatch:last-child {
   border-right: none;
 }
+product-popup__option--dropdown{
+margin-bottom:35px;
 
+}
 /* .product-popup__swatch.is-selected {
   background: #222;
   color: #fff;
