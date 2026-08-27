@@ -15,6 +15,20 @@
   "
 >
   <div class="gift-banner__topbar">
+    <button
+      type="button"
+      class="gift-banner__menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="gift-banner-panel-{{ section.id }}"
+    >
+      <span class="gift-banner__menu-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
     {% if section.settings.logo_text != blank %}
       <div class="gift-banner__logo">{{ section.settings.logo_text }}</div>
     {% endif %}
@@ -27,6 +41,22 @@
       <a
         href="{{ section.settings.top_button_link | default: '#' }}"
         class="gift-banner__btn gift-banner__btn--top"
+      >
+        <span>{{ section.settings.top_button_text }}</span>
+        <span class="gift-banner__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="gift-banner__mobile-panel" id="gift-banner-panel-{{ section.id }}">
+    {% if section.settings.announcement_text != blank %}
+      <p class="gift-banner__mobile-announcement">{{ section.settings.announcement_text }}</p>
+    {% endif %}
+
+    {% if section.settings.top_button_text != blank %}
+      <a
+        href="{{ section.settings.top_button_link | default: '#' }}"
+        class="gift-banner__btn gift-banner__btn--top gift-banner__mobile-btn"
       >
         <span>{{ section.settings.top_button_text }}</span>
         <span class="gift-banner__arrow" aria-hidden="true">&rarr;</span>
@@ -114,6 +144,42 @@
     </div>
   {% endif %}
 </section>
+
+<script>
+  (function () {
+    var sectionId = {{ section.id | json }};
+
+    function init() {
+      var root = document.getElementById('gift-banner-' + sectionId);
+      if (!root || root.dataset.menuInitialized === 'true') return;
+      root.dataset.menuInitialized = 'true';
+
+      var toggleBtn = root.querySelector('.gift-banner__menu-toggle');
+      var panel = document.getElementById('gift-banner-panel-' + sectionId);
+      if (!toggleBtn || !panel) return;
+
+      toggleBtn.addEventListener('click', function () {
+        var isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        panel.classList.toggle('is-open', !isOpen);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    document.addEventListener('shopify:section:load', function (event) {
+      if (event.detail && event.detail.sectionId === sectionId) {
+        var root = document.getElementById('gift-banner-' + sectionId);
+        if (root) root.dataset.menuInitialized = 'false';
+        init();
+      }
+    });
+  })();
+</script>
 
 {% schema %}
 {
