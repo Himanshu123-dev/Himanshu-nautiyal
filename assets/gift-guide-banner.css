@@ -63,16 +63,16 @@
 .gift-banner__content {
   position: relative;
   z-index: 1;
-  /* max-width: 460px; */
   padding: 40px 56px;
   color: var(--heading-color, #111);
+  top:24%;
 }
 
 .gift-banner__heading {
     font-family: "Jost", sans-serif;
   font-size: 70px;
   line-height: 1.1;
-  margin: 0 0 20px;
+  margin: 0 0 50px;
   font-weight: 500;
   font-style:normal;
   color: var(--heading-color, #111);
@@ -81,7 +81,7 @@
 .gift-banner__description {
   font-size: 14px;
   line-height: 1.6;
-  margin: 0 0 24px;
+  margin: 0 0 50px;
   max-width: 360px;
   color: var(--heading-color, #111);
   opacity: 0.85;
