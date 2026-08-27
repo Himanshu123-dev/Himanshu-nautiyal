@@ -1,0 +1,242 @@
+.shoppable-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.shoppable-grid__heading {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.shoppable-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.shoppable-grid__item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.shoppable-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.shoppable-grid__hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+
+.shoppable-grid__hotspot:hover,
+.shoppable-grid__hotspot:focus-visible {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Popup */
+.product-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.product-popup-overlay[hidden] {
+  display: none;
+}
+
+.product-popup {
+  background: #fff;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.product-popup__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.product-popup__content {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+}
+
+.product-popup__media {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.product-popup__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.product-popup__details {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-popup__title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-popup__price {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-popup__description {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.product-popup__option {
+  margin-bottom: 16px;
+}
+
+.product-popup__option-label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.product-popup__swatches {
+  display: flex;
+  border: 1px solid #222;
+  width: fit-content;
+}
+
+.product-popup__swatch {
+  background: #fff;
+  border: none;
+  border-right: 1px solid #222;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #222;
+}
+
+.product-popup__swatch:last-child {
+  border-right: none;
+}
+
+.product-popup__swatch.is-selected {
+  background: #222;
+  color: #fff;
+}
+
+.product-popup__size-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #222;
+  font-size: 14px;
+  background: #fff;
+}
+
+.product-popup__add-to-cart {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 14px 16px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-popup__add-to-cart:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.product-popup__message {
+  margin: 10px 0 0;
+  font-size: 12px;
+  min-height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 749px) {
+  .shoppable-grid-section {
+    padding: 24px 12px;
+  }
+
+  .shoppable-grid__heading {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .shoppable-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .product-popup__content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .product-popup__media,
+  .product-popup__image {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .product-popup__title {
+    font-size: 16px;
+  }
+}
