@@ -25,8 +25,8 @@
         "announcement_text": "Find the ideal gift for your loved ones.",
         "top_button_text": "Choose gift",
         "top_button_link": "",
-        "topbar_bg_color": "#F4F3F1",
-        "top_button_bg_color": "#F6E100",
+        "topbar_bg_color": "#f4f3f1",
+        "top_button_bg_color": "#f6e100",
         "top_button_text_color": "#111111",
         "heading": "The Gift Guide",
         "description": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
@@ -34,76 +34,76 @@
         "button_link": "",
         "text_color": "#111111",
         "button_bg_color": "#111111",
-        "button_text_color": "#FFFFFF",
+        "button_text_color": "#ffffff",
         "bottom_text": "Sustainable, ethically made clothes in sizes XXS to 6XL",
-        "bottombar_bg_color": "#F4F3F1",
+        "bottombar_bg_color": "#f4f3f1",
         "bottombar_text_color": "#111111"
       }
     },
     "shoppable_grid_gVN88F": {
       "type": "shoppable-grid",
       "blocks": {
-        "product_R9Kzky": {
-          "type": "product",
+        "product_6_a3E4ia": {
+          "type": "product_6",
           "settings": {
             "product": "blue-silk-tuxedo",
-            "position_x": 85,
-            "position_y": 15
+            "position_x": 68,
+            "position_y": 28
           }
         },
-        "product_GnjgaQ": {
-          "type": "product",
+        "product_5_MEHNW6": {
+          "type": "product_5",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "position_x": 40,
+            "position_y": 45
+          }
+        },
+        "product_4_pMHQeH": {
+          "type": "product_4",
           "settings": {
             "product": "classic-leather-jacket",
-            "position_x": 85,
-            "position_y": 15
+            "position_x": 58,
+            "position_y": 25
           }
         },
-        "product_zjzQcH": {
-          "type": "product",
+        "product_3_zkzf8C": {
+          "type": "product_3",
           "settings": {
             "product": "classic-varsity-top",
-            "position_x": 85,
-            "position_y": 15
+            "position_x": 60,
+            "position_y": 18
           }
         },
-        "product_ghyFRB": {
-          "type": "product",
-          "settings": {
-            "product": "black-leather-bag",
-            "position_x": 85,
-            "position_y": 15
-          }
-        },
-        "product_kFH86h": {
-          "type": "product",
+        "product_2_Y3RMCF": {
+          "type": "product_2",
           "settings": {
             "product": "dark-denim-top",
-            "position_x": 85,
-            "position_y": 20
+            "position_x": 78,
+            "position_y": 45
           }
         },
-        "product_D3DREh": {
-          "type": "product",
+        "product_1_3mFgNG": {
+          "type": "product_1",
           "settings": {
             "product": "floral-white-top",
-            "position_x": 85,
-            "position_y": 28
+            "position_x": 68,
+            "position_y": 48
           }
         }
       },
       "block_order": [
-        "product_R9Kzky",
-        "product_GnjgaQ",
-        "product_zjzQcH",
-        "product_ghyFRB",
-        "product_kFH86h",
-        "product_D3DREh"
+        "product_6_a3E4ia",
+        "product_5_MEHNW6",
+        "product_4_pMHQeH",
+        "product_3_zkzf8C",
+        "product_2_Y3RMCF",
+        "product_1_3mFgNG"
       ],
       "name": "Shoppable image grid",
       "settings": {
         "heading": "Tisso vison in the wild",
-        "auto_add_product": "",
+        "auto_add_product": "blue-silk-tuxedo",
         "trigger_color": "Black",
         "trigger_size": "Medium"
       }
