@@ -30,7 +30,7 @@
     </button>
 
     {% if section.settings.logo_text != blank %}
-      <div class="gift-banner__logo">{{ section.settings.logo_text }}</div>
+      <div class="gift-banner__logo">{{ section.settings.logo_image }}</div>
     {% endif %}
 
     {% if section.settings.announcement_text != blank %}
@@ -200,10 +200,9 @@
       "content": "Top bar"
     },
     {
-      "type": "text",
-      "id": "logo_text",
-      "label": "Logo text",
-      "default": "TISSO VISON"
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo"
     },
     {
       "type": "text",
