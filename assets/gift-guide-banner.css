@@ -356,6 +356,7 @@
   .gift-banner__btn {
     padding: 12px 18px;
     font-size: 16px;
+    font-weight:400;
   }
 }
 
