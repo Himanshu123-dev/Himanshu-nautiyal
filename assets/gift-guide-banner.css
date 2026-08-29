@@ -321,12 +321,14 @@
     position: relative;
     inset: auto;
     z-index: auto;
+    height: 100%;
+    width: 100%;
   }
 
   .gift-banner__bg {
     position: static;
     width: 100%;
-    height: auto;
+    height: 264px;
     aspect-ratio: 3 / 4;
     object-fit: cover;
   }
