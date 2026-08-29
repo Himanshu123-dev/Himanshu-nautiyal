@@ -361,5 +361,9 @@
   .gift-banner__heading {
     font-size: 30px;
   }
+
+  .gift-banner__bottombar p {
+    font-size: 14px;
+}
 }
 
