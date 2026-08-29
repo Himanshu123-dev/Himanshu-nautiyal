@@ -249,7 +249,7 @@ span.arrow {
 /* Responsive */
 @media (max-width: 749px) {
   .shoppable-grid-section {
-    padding: 24px 12px;
+    padding: 0px 12px;
   }
 
   .shoppable-grid__heading {
