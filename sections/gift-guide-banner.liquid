@@ -30,7 +30,7 @@
     </button>
 
     {% if section.settings.logo_image != blank %}
-      <div class="gift-banner__logo"><img {{ section.settings.logo_image }}></div>
+      <div class="gift-banner__logo">{{ section.settings.logo_image }}</div>
     {% endif %}
 
     {% if section.settings.announcement_text != blank %}
@@ -200,9 +200,10 @@
       "content": "Top bar"
     },
     {
-      "type": "image_picker",
+      "type": "text",
       "id": "logo_image",
-      "label": "Logo"
+      "label": "Logo",
+      "default":"logo"
     },
     {
       "type": "text",
