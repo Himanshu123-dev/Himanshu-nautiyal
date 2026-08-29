@@ -365,5 +365,13 @@
   .gift-banner__bottombar p {
     font-size: 14px;
 }
+
+.gift-banner__heading {
+    min-width: 100%;
+}
+
+.gift-banner__description {
+    min-width: 100%;
+}
 }
 
