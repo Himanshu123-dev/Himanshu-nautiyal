@@ -16,13 +16,15 @@
 
 .gift-banner__logo {
   font-weight: 700;
+  font-family:'Jost';
   letter-spacing: 0.08em;
   font-size: 15px;
   white-space: nowrap;
 }
 
 .gift-banner__announcement {
-  font-size: 13px;
+  font-size: 16px;
+  font-family:'Jost';
   color: #333;
   text-align: center;
   flex: 1;
@@ -133,20 +135,21 @@
 }
 
 .gift-banner__heading {
+  font-family:'Jost';
   font-size: 44px;
   line-height: 1.1;
-  margin: 0 0 20px;
+  margin: 0 0 50px;
   font-weight: 700;
   color: var(--heading-color, #111);
 }
 
 .gift-banner__description {
-  font-size: 14px;
+  font-size: 16px;
+ font-family:'Jost';
   line-height: 1.6;
-  margin: 0 0 24px;
+  margin: 0 0 50px;
   max-width: 360px;
   color: var(--heading-color, #111);
-  opacity: 0.85;
 }
 
 /* Bottom bar */
@@ -158,7 +161,8 @@
 
 .gift-banner__bottombar p {
   margin: 0;
-  font-size: 11px;
+  font-size: 16px;
+  font-family:'Jost';
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--bottombar-color, #111);
@@ -170,7 +174,8 @@
   align-items: center;
   gap: 10px;
   padding: 13px 24px;
-  font-size: 12px;
+  font-size: 16px;
+  font-family:'Jost';
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
