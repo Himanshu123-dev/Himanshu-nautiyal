@@ -373,5 +373,9 @@
 .gift-banner__description {
     min-width: 100%;
 }
+
+.gift-banner {
+    margin-bottom: 40px;
+
 }
 
