@@ -239,9 +239,7 @@
     padding: 32px 40px;
   }
 }
-.gift-banner__btn.gift-banner__btn--main.gift-banner__media-btn {
-    display: none;
-}
+
 @media (max-width: 749px) {
   .gift-banner__topbar {
     flex-wrap: nowrap;
@@ -254,8 +252,10 @@
   .gift-banner__menu-toggle {
     display: flex;
   }
-
-  
+ 
+  .gift-banner__btn.gift-banner__btn--main.gift-banner__media-btn {
+    display: none;
+}
 
   .gift-banner__topbar > .gift-banner__announcement,
   .gift-banner__topbar > .gift-banner__btn--top {
@@ -362,8 +362,3 @@
   }
 }
 
-@media (min-width:768px){
-  .gift-banner__btn.gift-banner__btn--main.gift-banner__media-btn {
-    display: block;
-}
-}
