@@ -284,8 +284,9 @@
   .gift-banner__mobile-announcement {
     margin: 0;
     padding: 16px 20px 0;
-    font-size: 13px;
+    font-size: 14px;
     color: #333;
+    font-family:'jost';
   }
 
   .gift-banner__mobile-btn {
