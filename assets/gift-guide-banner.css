@@ -148,7 +148,7 @@
  font-family:'Jost';
   line-height: 1.6;
   margin: 0 0 50px;
-  max-width: 360px;
+  min-width: 420px;
   color: var(--heading-color, #111);
 }
 
