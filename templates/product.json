@@ -116,18 +116,11 @@
     "brew_guide_ckiNRB": {
       "type": "brew-guide",
       "blocks": {
-        "method_6aR8Gh": {
-          "type": "method",
-          "settings": {
-            "method_name": "Method name",
-            "method_text": ""
-          }
-        },
         "method_i7z74X": {
           "type": "method",
           "settings": {
             "method_name": "Method name",
-            "method_text": ""
+            "method_text": "<p>kjhfkjhsdkfhskjhfkhskfhskhfkhsdkfhkshfkshdkfhsdkhfksdhfksdhfkhsdkjfhskjdhfksdhfkj</p>"
           }
         },
         "method_wH8xA6": {
@@ -139,7 +132,6 @@
         }
       },
       "block_order": [
-        "method_6aR8Gh",
         "method_i7z74X",
         "method_wH8xA6"
       ],
