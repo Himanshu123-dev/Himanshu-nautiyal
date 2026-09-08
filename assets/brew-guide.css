@@ -42,7 +42,7 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(45, 60, 75, 1);
-  width:315px;
+  width: 315px;
 }
 
 .brew-guide__method {
@@ -111,15 +111,16 @@
 }
 
 .brew-guide__media {
-  width: 762px;
-  height: 460px;
+  width: 100%;
+  max-width: 762px;
 }
 
 .brew-guide__media img,
 .brew-guide__media-placeholder {
-  width: 762px;
-  height: 460px;
-  min-height: unset;
+  width: 100%;
+  max-width: 762px;
+  aspect-ratio: 762 / 460;
+  height: auto;
   object-fit: cover;
   display: block;
   border-radius: 2px;
@@ -148,20 +149,8 @@
 
   .brew-guide__media {
     order: -1;
+    max-width: 100%;
   }
-/* 
-  .brew-guide__media img,
-  .brew-guide__media-placeholder {
-    min-height: 260px;
-  } */
-
-   
-  .brew-guide__media,
-  .brew-guide__media img,
-  .brew-guide__media-placeholder {
-    width: 100%;
-    height: 260px;
-}
 }
 
 @media (max-width: 480px) {
