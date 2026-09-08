@@ -23,22 +23,12 @@
   gap: 1.25rem;
 }
 
-.brew-guide__time {
+.brew-guide__heading {
   font-family: "Fraunces", Georgia, serif;
-  font-size: 0.95rem;
   font-weight: 600;
-  margin: 0;
-}
-
-.brew-guide__intro {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(36, 28, 21, 0.75);
-  max-width: 42ch;
-}
-
-.brew-guide__intro p {
-  margin: 0 0 0.75rem;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
 }
 
 .brew-guide__link {
