@@ -1,0 +1,94 @@
+{{ 'brew-guide.css' | asset_url | stylesheet_tag }}
+
+<section class="brew-guide" id="brew-guide-{{ section.id }}">
+  <div class="brew-guide__inner">
+    <div class="brew-guide__content">
+      <p class="brew-guide__time">{{ section.settings.time_label }}</p>
+
+      <div class="brew-guide__intro">
+        {{ section.settings.intro_text }}
+        {%- if section.settings.link_text != blank -%}
+          <a href="{{ section.settings.link_url }}" class="brew-guide__link">{{ section.settings.link_text }}</a>
+        {%- endif -%}
+      </div>
+
+      <div class="brew-guide__methods">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'method' -%}
+            <details class="brew-guide__method" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+              <summary class="brew-guide__method-summary">
+                <span>{{ block.settings.method_name | default: 'Method name' }}</span>
+                <svg class="brew-guide__chevron" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              {%- if block.settings.method_text != blank -%}
+                <div class="brew-guide__method-body">{{ block.settings.method_text }}</div>
+              {%- endif -%}
+            </details>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_url }}" class="brew-guide__button">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+    </div>
+
+    <div class="brew-guide__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w,
+                  {{ section.settings.image | image_url: width: 900 }} 900w,
+                  {{ section.settings.image | image_url: width: 1200 }} 1200w"
+          sizes="(min-width: 990px) 50vw, 100vw"
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+      {%- else -%}
+        <div class="brew-guide__media-placeholder">{{ 'image' | placeholder_svg_tag: 'brew-guide__placeholder-svg' }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brew guide",
+  "tag": "section",
+  "class": "section-brew-guide",
+  "settings": [
+    { "type": "text", "id": "time_label", "label": "Time label", "default": "Total time: 5 min" },
+    { "type": "richtext", "id": "intro_text", "label": "Intro text", "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec erat urna, tincidunt neque gravida.</p>" },
+    { "type": "text", "id": "link_text", "label": "Inline link text", "default": "Learn more" },
+    { "type": "url", "id": "link_url", "label": "Inline link URL" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Download our brew guides" },
+    { "type": "url", "id": "button_url", "label": "Button URL" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ],
+  "blocks": [
+    {
+      "type": "method",
+      "name": "Brew method",
+      "settings": [
+        { "type": "text", "id": "method_name", "label": "Method name", "default": "Method name" },
+        { "type": "richtext", "id": "method_text", "label": "Method description" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Brew guide",
+      "blocks": [
+        { "type": "method" },
+        { "type": "method" },
+        { "type": "method" }
+      ]
+    }
+  ]
+}
+{% endschema %}
