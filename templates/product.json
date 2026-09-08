@@ -112,11 +112,108 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "brew_guide_ckiNRB": {
+      "type": "brew-guide",
+      "blocks": {
+        "method_6aR8Gh": {
+          "type": "method",
+          "settings": {
+            "method_name": "Method name",
+            "method_text": ""
+          }
+        },
+        "method_i7z74X": {
+          "type": "method",
+          "settings": {
+            "method_name": "Method name",
+            "method_text": ""
+          }
+        },
+        "method_wH8xA6": {
+          "type": "method",
+          "settings": {
+            "method_name": "Method name",
+            "method_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "method_6aR8Gh",
+        "method_i7z74X",
+        "method_wH8xA6"
+      ],
+      "name": "Brew guide",
+      "settings": {
+        "time_label": "Total time: 5 min",
+        "intro_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec erat urna, tincidunt neque gravida.</p>",
+        "link_text": "Learn more",
+        "link_url": "",
+        "button_label": "Download our brew guides",
+        "button_url": ""
+      }
+    },
+    "coffee_story_i4eEhp": {
+      "type": "coffee-story",
+      "name": "Coffee story",
+      "settings": {
+        "eyebrow": "Try our recipe",
+        "heading": "100% Arabica coffee. Directly sourced from farms. Freshly roasted.",
+        "body_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec erat urna, tincidunt neque gravida.</p>",
+        "video_url": ""
+      }
+    },
+    "product_recommendations_gcwXEp": {
+      "type": "product-recommendations",
+      "blocks": {
+        "product_nyXFf9": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag",
+            "subtitle": ""
+          }
+        },
+        "product_XEQyAW": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "subtitle": ""
+          }
+        },
+        "product_dyYb4P": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "subtitle": ""
+          }
+        },
+        "product_BmP7TN": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_nyXFf9",
+        "product_XEQyAW",
+        "product_dyYb4P",
+        "product_BmP7TN"
+      ],
+      "name": "You may also like",
+      "settings": {
+        "heading": "You may also like",
+        "columns_desktop": 4
+      }
     }
   },
   "order": [
     "main",
     "disclosures",
-    "related-products"
+    "related-products",
+    "brew_guide_ckiNRB",
+    "coffee_story_i4eEhp",
+    "product_recommendations_gcwXEp"
   ]
 }
