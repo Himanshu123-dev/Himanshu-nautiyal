@@ -165,64 +165,13 @@
     },
     "coffee_story_i4eEhp": {
       "type": "coffee-story",
+      "disabled": true,
       "name": "Coffee story",
       "settings": {
         "eyebrow": "Try our recipe",
         "heading": "100% Arabica coffee. Directly sourced from farms. Freshly roasted.",
         "body_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec erat urna, tincidunt neque gravida.</p>",
         "video_url": ""
-      }
-    },
-    "product_recommendations_gcwXEp": {
-      "type": "product-recommendations",
-      "blocks": {
-        "product_d4kEyr": {
-          "type": "product",
-          "settings": {
-            "product": "dark-denim-top",
-            "subtitle": ""
-          }
-        },
-        "product_nyXFf9": {
-          "type": "product",
-          "settings": {
-            "product": "black-leather-bag",
-            "subtitle": ""
-          }
-        },
-        "product_XEQyAW": {
-          "type": "product",
-          "settings": {
-            "product": "blue-silk-tuxedo",
-            "subtitle": ""
-          }
-        },
-        "product_dyYb4P": {
-          "type": "product",
-          "settings": {
-            "product": "classic-leather-jacket",
-            "subtitle": ""
-          }
-        },
-        "product_BmP7TN": {
-          "type": "product",
-          "settings": {
-            "product": "classic-varsity-top",
-            "subtitle": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_d4kEyr",
-        "product_nyXFf9",
-        "product_XEQyAW",
-        "product_dyYb4P",
-        "product_BmP7TN"
-      ],
-      "name": "You may also like",
-      "settings": {
-        "heading": "You may also like",
-        "columns_desktop": 4
       }
     }
   },
@@ -231,7 +180,6 @@
     "disclosures",
     "related-products",
     "brew_guide_ckiNRB",
-    "coffee_story_i4eEhp",
-    "product_recommendations_gcwXEp"
+    "coffee_story_i4eEhp"
   ]
 }
