@@ -116,6 +116,13 @@
     "brew_guide_ckiNRB": {
       "type": "brew-guide",
       "blocks": {
+        "method_rJi4cw": {
+          "type": "method",
+          "settings": {
+            "method_name": "Method name",
+            "method_text": ""
+          }
+        },
         "method_i7z74X": {
           "type": "method",
           "settings": {
@@ -132,11 +139,13 @@
         }
       },
       "block_order": [
+        "method_rJi4cw",
         "method_i7z74X",
         "method_wH8xA6"
       ],
       "name": "Brew guide",
       "settings": {
+        "heading": "How to brew",
         "time_label": "Total time: 5 min",
         "intro_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec erat urna, tincidunt neque gravida.</p>",
         "link_text": "Learn more",
