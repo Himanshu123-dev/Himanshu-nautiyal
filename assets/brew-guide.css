@@ -41,7 +41,7 @@
 .brew-guide__methods {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid ;
+  border-top: 1px solid rgba(45, 60, 75, 1);
   width:315px;
 }
 
