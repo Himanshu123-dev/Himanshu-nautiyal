@@ -41,7 +41,8 @@
 .brew-guide__methods {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid ;
+  width:315px;
 }
 
 .brew-guide__method {
@@ -55,7 +56,7 @@
   padding: 1rem 0;
   cursor: pointer;
   list-style: none;
-  font-family: "Fraunces", Georgia, serif;
+  /* font-family: "Fraunces", Georgia, serif; */
   font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
