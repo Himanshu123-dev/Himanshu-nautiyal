@@ -119,21 +119,19 @@
         "method_rJi4cw": {
           "type": "method",
           "settings": {
-            "method_name": "Method name",
-            "time_label": "Total time:",
-            "time_value": "5 min",
-            "method_text": "<p>ffdghkjsdfhgkjdfhgkjdhkghdkhfkjdhkjfhgkjfhkjghkjdfhgkjdhkghskdhgjdhjghsjdhgkjsh</p>",
+            "title": "Method Name",
+            "total_time": "5 min",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
             "link_text": "Learn more",
-            "link_url": ""
+            "link_url": "#"
           }
         },
         "method_i7z74X": {
           "type": "method",
           "settings": {
-            "method_name": "Method name",
-            "time_label": "Total time:",
-            "time_value": "5 min",
-            "method_text": "<p>kjhfkjhsdkfhskjhfkhskfhskhfkhsdkfhkshfkshdkfhsdkhfksdhfksdhfkhsdkjfhskjdhfksdhfkj</p>",
+            "title": "Method Name",
+            "total_time": "5 min",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
             "link_text": "Learn more",
             "link_url": ""
           }
@@ -141,10 +139,9 @@
         "method_wH8xA6": {
           "type": "method",
           "settings": {
-            "method_name": "Method name",
-            "time_label": "Total time:",
-            "time_value": "5 min",
-            "method_text": "<p>fjkdfhsdghksfhgsdhgkhdsfkhgkjdfshgkjdhkjghkdhgkjdfhgkjdhiuherutherhgkjbdmhbvjhxcbvhjbvjhs</p>",
+            "title": "Method Name",
+            "total_time": "5 min",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
             "link_text": "Learn more",
             "link_url": ""
           }
@@ -158,9 +155,19 @@
       "name": "Brew guide",
       "settings": {
         "heading": "BREWING METHODS",
+        "image": "shopify://shop_images/julien-labelle-G163WX71GFE-unsplash_2.jpg",
+        "image_width": 762,
+        "image_height": 460,
+        "top_gap": 243,
+        "content_top_gap": 156,
         "button_label": "Download our brew guides",
-        "button_url": "",
-        "image": "shopify://shop_images/julien-labelle-G163WX71GFE-unsplash_2.jpg"
+        "button_link": "",
+        "bg_color": "#faf9f6",
+        "border_color": "#d8d5ce",
+        "heading_color": "#1f2430",
+        "text_color": "#3a3f4b",
+        "button_bg": "#2b2f3a",
+        "button_text_color": "#ffffff"
       }
     },
     "coffee_story_i4eEhp": {
