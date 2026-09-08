@@ -166,6 +166,13 @@
     "product_recommendations_gcwXEp": {
       "type": "product-recommendations",
       "blocks": {
+        "product_d4kEyr": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top",
+            "subtitle": ""
+          }
+        },
         "product_nyXFf9": {
           "type": "product",
           "settings": {
@@ -196,6 +203,7 @@
         }
       },
       "block_order": [
+        "product_d4kEyr",
         "product_nyXFf9",
         "product_XEQyAW",
         "product_dyYb4P",
