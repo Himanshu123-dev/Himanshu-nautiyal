@@ -10,7 +10,7 @@
       <div class="brew-guide__methods">
         {%- for block in section.blocks -%}
           {%- if block.type == 'method' -%}
-            <details class="brew-guide__method" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+            <details class="brew-guide__method" name="brew-guide-accordion-{{ section.id }}" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
               <summary class="brew-guide__method-summary">
                 <span>{{ block.settings.method_name | default: 'Method name' }}</span>
                 <svg class="brew-guide__chevron" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,6 +63,26 @@
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var root = document.getElementById('brew-guide-{{ section.id }}');
+    if (!root) return;
+    var details = root.querySelectorAll('.brew-guide__method');
+
+    // Native <details name="..."> already makes these mutually exclusive in
+    // modern browsers. This listener is a safe fallback for older browsers
+    // that ignore the name attribute.
+    details.forEach(function (el) {
+      el.addEventListener('toggle', function () {
+        if (!el.open) return;
+        details.forEach(function (other) {
+          if (other !== el) other.open = false;
+        });
+      });
+    });
+  })();
+</script>
 
 {% schema %}
 {
