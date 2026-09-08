@@ -121,7 +121,7 @@
           "settings": {
             "title": "Method Name",
             "total_time": "5 min",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur erat adipising elit.<br/>Donec erat urna, tincidunt neque gravida neque sed, fringilla<br/>commodo dui. Cras orci arcu, sodales id neque sit amet.<br/>Learn more<br/></p>",
             "link_text": "Learn more",
             "link_url": "#"
           }
