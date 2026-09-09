@@ -3,15 +3,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 
-.coffee-story__eyebrow {
-  margin: 0 auto;
-  font-family: "Lato";
-  font-size: 24px;
-  text-align: left;
+p.coffee-story__eyebrow {
+    position: relative;
+    left: 62%;
+    width: 15%;
+    color: #2D3C4B;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0 16px 0;
+    height: 29px;
+    display: flex;
+    text-transform: uppercase;
+    align-content: center;
+    align-items: center;
 }
 
 .coffee-story__inner {
- 
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 62%) minmax(0, 38%);
@@ -30,6 +37,7 @@ height: 595px;
 .coffee-story__heading {
   font-family: "Lato";
   font-weight: 400;
+  color: #2D3C4B;
   font-size: 32px;
   line-height:41px;
   letter-spacing:4%;
@@ -39,6 +47,7 @@ height: 595px;
 
 .coffee-story__text {
   font-size: 12px;
+  color: #2D3C4B;
   line-height: 19px;
   color: rgba(36, 28, 21, 0.7);
   max-width: 425px;
