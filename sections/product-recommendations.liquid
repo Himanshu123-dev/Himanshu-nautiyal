@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
+
 <div class="yml-section" style="background-color: {{ section.settings.bg_color }};">
   <div class="yml-container">
     {% if section.settings.heading != blank %}
@@ -69,32 +70,46 @@
 </div>
 
 {% style %}
-
-   .yml-heading {
+  .yml-section {
+    padding: 56px 24px;
+    font-family: 'Lato', sans-serif;
+  }
+  .yml-container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .yml-heading {
     font-size: 24px;
     font-weight: 700;
-    letter-spacing: 6%;
+    letter-spacing: 0.06em;
     margin: 0 0 32px;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     color: #2D3C4B;
-
   }
   .yml-grid {
-    display: grid;
-    grid-template-columns: repeat(var(--yml-cols, 4), 1fr);
-    gap: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
-  @media (max-width: 989px) {
-    .yml-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 599px) {
-    .yml-grid { grid-template-columns: 1fr; }
-  }
-
   .yml-card {
     display: flex;
     flex-direction: column;
+    flex: 1 1 calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
+    max-width: calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
   }
+  @media (max-width: 989px) {
+    .yml-card {
+      flex: 1 1 calc((100% - 20px) / 2);
+      max-width: calc((100% - 20px) / 2);
+    }
+  }
+  @media (max-width: 599px) {
+    .yml-card {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+
   .yml-image-wrap {
     display: block;
     width: 100%;
@@ -225,7 +240,8 @@
         {
           "type": "product",
           "id": "product",
-          "label": "Product"
+          "label": "Product",
+          "info": "Title aur price yahan se automatically aa jaayenge."
         },
         {
           "type": "text",
