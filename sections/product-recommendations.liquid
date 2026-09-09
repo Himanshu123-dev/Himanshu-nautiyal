@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 
-<div class="yml-section" style="background-color: {{ section.settings.bg_color }};">
+<div class="yml-section">
   <div class="yml-container">
     {% if section.settings.heading != blank %}
       <h2 class="yml-heading">{{ section.settings.heading }}</h2>
@@ -71,12 +71,13 @@
 
 {% style %}
   .yml-section {
-    padding: 56px 61px;
+    padding: 56px 0px;
+    width: fit-content;
   }
-  /* .yml-container {
-    max-width: 1240px;
-    margin: 0 auto;
-  } */
+  .yml-container {
+  width: fit-content;
+
+  }
   .yml-heading {
     font-size: 24px;
     font-weight: 700;
@@ -88,7 +89,7 @@
   .yml-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
   }
   .yml-card {
     display: flex;
