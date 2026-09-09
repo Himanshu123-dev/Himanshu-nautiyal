@@ -71,13 +71,13 @@
 
 {% style %}
   .yml-section {
-    padding: 56px 24px;
+    padding: 56px 61px;
     font-family: 'Lato', sans-serif;
   }
-  .yml-container {
+  /* .yml-container {
     max-width: 1240px;
     margin: 0 auto;
-  }
+  } */
   .yml-heading {
     font-size: 24px;
     font-weight: 700;
@@ -94,8 +94,8 @@
   .yml-card {
     display: flex;
     flex-direction: column;
-    /* flex: 1 1 calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
-    max-width: calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols)); */
+    flex: 1 1 calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
+    max-width: calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
   }
   @media (max-width: 989px) {
     .yml-card {
