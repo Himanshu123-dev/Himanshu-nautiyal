@@ -113,6 +113,58 @@
         "padding_bottom": 28
       }
     },
+    "highlighted_section_GaEFL8": {
+      "type": "highlighted-section",
+      "blocks": {
+        "feature_thM6KH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_3.jpg",
+            "title": "Ethically Sourced",
+            "description": "Roasted 4 hours after your order is placed"
+          }
+        },
+        "feature_tAct67": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Freshly_Roasted_to_Order_V2-18_2.jpg",
+            "title": "Ethically Sourced",
+            "description": "Roasted 4 hours after your order is placed"
+          }
+        },
+        "feature_fADkQF": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_2.jpg",
+            "title": "Ethically Sourced",
+            "description": "Roasted 4 hours after your order is placed"
+          }
+        },
+        "feature_hQcEag": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Delivered_Fresh-21_2.jpg",
+            "title": "Ethically Sourced",
+            "description": "Roasted 4 hours after your order is placed"
+          }
+        }
+      },
+      "block_order": [
+        "feature_thM6KH",
+        "feature_tAct67",
+        "feature_fADkQF",
+        "feature_hQcEag"
+      ],
+      "name": "Feature Highlights",
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "title_color": "#2D3C4B",
+        "text_color": "#6B7280",
+        "divider_color": "#E5E5E5",
+        "icon_width": 44,
+        "gap": 32
+      }
+    },
     "brew_guide_ckiNRB": {
       "type": "brew-guide",
       "blocks": {
@@ -242,6 +294,7 @@
     "main",
     "disclosures",
     "related-products",
+    "highlighted_section_GaEFL8",
     "brew_guide_ckiNRB",
     "coffee_story_i4eEhp",
     "product_recommendations_ByexyL"
