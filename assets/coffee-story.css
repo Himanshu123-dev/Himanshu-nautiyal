@@ -21,7 +21,7 @@
 
 .coffee-story__panel {
  display:block;
- padding:64px 0 0 0;
+ padding:64px 0 0 61px;
  background: #D7D1C9;
 
 }
@@ -32,7 +32,7 @@
   font-size: 32px;
   line-height:41px;
   letter-spacing:4%;
-  margin: 0;
+  margin: 0 0 14px 0;
   max-width: 699px;
 }
 
