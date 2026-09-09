@@ -14,7 +14,6 @@ p.coffee-story__eyebrow {
     height: 29px;
     display: flex;
     text-transform: uppercase;
-    align-content: center;
     align-items: center;
 }
 
