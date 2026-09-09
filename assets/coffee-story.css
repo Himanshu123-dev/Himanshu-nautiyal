@@ -4,7 +4,6 @@
 
 
 .coffee-story__eyebrow {
-  /* max-width: 1200px; */
   margin: 0 auto;
   font-family: "Lato";
   font-size: 24px;
@@ -12,20 +11,22 @@
 }
 
 .coffee-story__inner {
-  /* max-width: 1200px; */
+ 
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  /* min-height: 420px; */
+  grid-template-columns: minmax(0, 62%) minmax(0, 38%);
+  height: 598px;
 }
 
 .coffee-story__panel {
  display:block;
  padding:64px 0 0 61px;
  background: #D7D1C9;
-
+height: 595px;
 }
-
+.coffee-story {
+    height: 640px;
+}
 .coffee-story__heading {
   font-family: "Lato";
   font-weight: 400;
@@ -62,7 +63,7 @@
 .coffee-story__media-placeholder {
   width: 100%;
   height: 100%;
-  min-height: 420px;
+  height: 595px;
   object-fit: cover;
   display: block;
 }
