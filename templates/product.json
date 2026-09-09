@@ -173,7 +173,7 @@
     "coffee_story_i4eEhp": {
       "type": "coffee-story",
       "custom_css": [
-        "p.coffee-story__eyebrow {position: relative; left: 62%; width: 15%; color: #2D3C4B; font-size: 24px; font-weight: 700; margin: 20px 0 16px 0; height: 29px; display: flex; text-transform: uppercase; align-content: center; align-items: center;}"
+        "p.coffee-story__eyebrow {position: relative; left: 62%; width: 15%; color: #2d3c4b; font-size: 24px; font-weight: 700; margin: 20px 0 16px 0; height: 29px; display: flex; text-transform: uppercase; align-content: center; align-items: center;}"
       ],
       "name": "Coffee story",
       "settings": {
@@ -184,6 +184,58 @@
         "image": "shopify://shop_images/DSC_8198_1.jpg",
         "video_url": ""
       }
+    },
+    "product_recommendations_ByexyL": {
+      "type": "product-recommendations",
+      "blocks": {
+        "product_bwqaFy": {
+          "type": "product",
+          "settings": {
+            "product": "signature-cold-brew-blend",
+            "extra_field_1": "Roast Level",
+            "extra_field_2": ""
+          }
+        },
+        "product_AD9H8t": {
+          "type": "product",
+          "settings": {
+            "product": "signature-filter-coffee",
+            "extra_field_1": "Roast Level",
+            "extra_field_2": ""
+          }
+        },
+        "product_3GGdzw": {
+          "type": "product",
+          "settings": {
+            "product": "signature-cold-brew-blend",
+            "extra_field_1": "Roast Level",
+            "extra_field_2": ""
+          }
+        },
+        "product_46JJ37": {
+          "type": "product",
+          "settings": {
+            "product": "signature-filter-coffee",
+            "extra_field_1": "Roast Level",
+            "extra_field_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_bwqaFy",
+        "product_AD9H8t",
+        "product_3GGdzw",
+        "product_46JJ37"
+      ],
+      "name": "You May Also Like",
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "bg_color": "#FBF6F1",
+        "products_per_row": 4,
+        "image_width": 315,
+        "image_height": 352,
+        "add_to_cart_label": "ADD TO CART"
+      }
     }
   },
   "order": [
@@ -191,6 +243,7 @@
     "disclosures",
     "related-products",
     "brew_guide_ckiNRB",
-    "coffee_story_i4eEhp"
+    "coffee_story_i4eEhp",
+    "product_recommendations_ByexyL"
   ]
 }
