@@ -119,33 +119,33 @@
         "feature_thM6KH": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Layer_3.jpg",
+            "icon": "shopify://shop_images/Homepage_Ethically_Sourced.svg",
             "title": "Ethically Sourced",
-            "description": "Roasted 4 hours after your order is placed"
+            "description": "We work closely with producers to ensure that the beans are of the highest quality, grown sustainably and traded responsibly."
           }
         },
         "feature_tAct67": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Freshly_Roasted_to_Order_V2-18_2.jpg",
-            "title": "Ethically Sourced",
-            "description": "Roasted 4 hours after your order is placed"
+            "icon": "shopify://shop_images/ProductDetail_Freshly_Roasted_to_Order.svg",
+            "title": "Freshly Roasted",
+            "description": "We specially roast your coffee in our in-house, state-of-the-art coffee roaster with specific profiles to ensure optimal flavour notes."
           }
         },
         "feature_fADkQF": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Layer_2.jpg",
-            "title": "Ethically Sourced",
-            "description": "Roasted 4 hours after your order is placed"
+            "icon": "shopify://shop_images/Homepage_Safely_Delivered.svg",
+            "title": "Sealed for Freshness",
+            "description": "All our coffee is freshly packed with love, care, and of course, a whole lot of delectable flavours."
           }
         },
         "feature_hQcEag": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Delivered_Fresh-21_2.jpg",
-            "title": "Ethically Sourced",
-            "description": "Roasted 4 hours after your order is placed"
+            "icon": "shopify://shop_images/ProductDetail_Delivered_Fresh.svg",
+            "title": "Safely Delivered",
+            "description": "We do our best to ensure that your coffee reaches you properly packaged, completely fresh and well in time."
           }
         }
       },
@@ -157,12 +157,12 @@
       ],
       "name": "Feature Highlights",
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "title_color": "#2D3C4B",
-        "text_color": "#6B7280",
-        "divider_color": "#E5E5E5",
-        "icon_width": 44,
-        "gap": 32
+        "text_color": "#2D3C4B",
+        "divider_color": "#2D3C4B",
+        "icon_width": 79,
+        "gap": 11
       }
     },
     "brew_guide_ckiNRB": {
