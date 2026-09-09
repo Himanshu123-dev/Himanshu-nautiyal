@@ -58,7 +58,7 @@
                       SOLD OUT
                     {% endif %}
                   </span>
-                  <span class="yml-add-price">{{ product.price | money }}</span>
+                  <span class="yml-add-price">{{ product.price | money_without_trailing_zeros }}</span>
                 </button>
               {% endform %}
             </div>
