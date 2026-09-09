@@ -50,9 +50,8 @@
 }
 
 .coffee-story__illustration {
-  width: min(100%, 380px);
-  height: auto;
-  margin-top: 0.5rem;
+  width: 540px;
+  height: 204px;
 }
 
 .coffee-story__media {
