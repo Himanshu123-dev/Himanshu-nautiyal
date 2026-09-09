@@ -7,16 +7,16 @@
   /* max-width: 1200px; */
   margin: 0 auto;
   font-family: "Lato";
-  font-size: 0.95rem;
+  font-size: 24px;
   text-align: left;
 }
 
 .coffee-story__inner {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  min-height: 420px;
+  /* min-height: 420px; */
 }
 
 .coffee-story__panel {
