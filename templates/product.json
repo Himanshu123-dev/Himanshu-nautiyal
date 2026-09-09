@@ -158,11 +158,11 @@
       "name": "Feature Highlights",
       "settings": {
         "bg_color": "#ffffff",
-        "title_color": "#2D3C4B",
-        "text_color": "#2D3C4B",
-        "divider_color": "#2D3C4B",
+        "title_color": "#2d3c4b",
+        "text_color": "#2d3c4b",
+        "divider_color": "#2d3c4b",
         "icon_width": 79,
-        "gap": 11
+        "gap": 20
       }
     },
     "brew_guide_ckiNRB": {
