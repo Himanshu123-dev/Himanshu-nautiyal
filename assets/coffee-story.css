@@ -20,13 +20,10 @@
 }
 
 .coffee-story__panel {
-  background: var(--panel);
-  padding: clamp(1.75rem, 4vw, 3rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1.25rem;
-  position: relative;
+ display:block;
+ padding:64px 0 0 0;
+ background: #D7D1C9;
+
 }
 
 .coffee-story__heading {
