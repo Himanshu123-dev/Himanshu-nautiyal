@@ -1,4 +1,6 @@
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 <div
   class="tb-section"
@@ -56,7 +58,6 @@
   .tb-item {
     flex: 1 1 220px;
     padding-left: var(--tb-gap, 32px);
-    border-left: 1px solid var(--tb-divider-color, #e5e5e5);
   }
   .tb-item:first-child {
     padding-left: 0;
@@ -69,19 +70,22 @@
     margin-bottom: 20px;
   }
   .tb-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--tb-title-color, #2D3C4B);
     padding-bottom: 12px;
+    font-family:'Lato';
     margin-bottom: 12px;
-    border-bottom: 1px solid var(--tb-divider-color, #e5e5e5);
+    border-bottom: 1px solid var(--tb-divider-color, #2D3C4B);
   }
   .tb-text {
-    font-size: 13px;
+    font-size: 14px;
+    font-family:'Merriweather';
+    font-weight:300;
     line-height: 1.5;
-    color: var(--tb-text-color, #6b7280);
+    color: var(--tb-text-color, #2D3C4B);
     margin: 0;
   }
 
@@ -92,7 +96,7 @@
     .tb-item {
       border-left: none;
       padding-left: 0;
-      border-top: 1px solid var(--tb-divider-color, #e5e5e5);
+      border-top: 1px solid var(--tb-divider-color, #2D3C4B);
       padding-top: var(--tb-gap, 32px);
     }
     .tb-item:first-child {
