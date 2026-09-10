@@ -87,9 +87,10 @@
               %}
             </select>
             <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
+              {% comment %} {{- 'icon-caret.svg' | inline_asset_content -}} {% endcomment %}
+               {%- render 'icon-select-arrows' -%}
             </span>
-            gfdgf
+            
           </div>
         </div>
       {%- endif -%}
