@@ -154,6 +154,41 @@
       </button>
     </div>
   </slider-component>
+
+    
+
+    {%- if section.settings.gallery_layout == 'slide' and media_count > 1 -%}
+      <div class="slider-dots quick-add-hidden" id="GalleryDots-{{ section.id }}" role="tablist">
+        {%- assign dot_position = 0 -%}
+        {%- if featured_media != null -%}
+          {%- assign dot_position = 1 -%}
+          <button
+            type="button"
+            class="slider-dot"
+            role="tab"
+            aria-label="{{ 'products.product.media.load_image' | t: index: 1 }}"
+            aria-current="true"
+            data-target="{{ section.id }}-{{ featured_media.id }}"
+            data-media-position="1"
+          ></button>
+        {%- endif -%}
+        {%- for media in product.media -%}
+          {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+            {%- assign dot_position = dot_position | plus: 1 -%}
+            <button
+              type="button"
+              class="slider-dot"
+              role="tab"
+              aria-label="{{ 'products.product.media.load_image' | t: index: dot_position }}"
+              data-target="{{ section.id }}-{{ media.id }}"
+              data-media-position="{{ dot_position }}"
+            ></button>
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  
   {%- if first_3d_model -%}
     <button
       class="button button--full-width product__xr-button"
