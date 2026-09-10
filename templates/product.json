@@ -19,7 +19,7 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "kfdldkg;ldfkg;ldkfg;lkdf;gkd;flkgk",
+            "text": "{{ product.metafields.custom.ingredient.value }}",
             "text_style": "uppercase"
           }
         },
