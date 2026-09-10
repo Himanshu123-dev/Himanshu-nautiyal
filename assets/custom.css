@@ -5,7 +5,8 @@
   /* highlighted section css */
 
   .tb-section {
-    padding: 48px 0;            
+    padding: 48px 0;
+    margin-top: 55px;
   }
   .tb-container {
     max-width: calc(100% - 128px); 
@@ -71,7 +72,11 @@
 
 /* end */
 
-  /* brew-guide css */
+/* brew-guide css */
+section.brewing-methods {
+    margin-top: 45px;
+}
+  
   .brewing-methods-{{ section.id }} .brewing-methods__inner {
     /* max-width: 1400px;
     margin: 0 auto; */
