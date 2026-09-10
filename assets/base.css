@@ -104,7 +104,7 @@ p.product__text {
     color: #24394A;
     font-weight: 400;
     letter-spacing: 4%;
-    margin: 0 0 17px 0;
+    margin: 2 0 17px 0 !important;
 }
 
 
