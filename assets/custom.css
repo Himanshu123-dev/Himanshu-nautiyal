@@ -1,8 +1,6 @@
-/* ============================================================
-   GLOBAL SPACING RULE (used by all 4 sections below)
-   - Desktop / tablet: 64px left-right space, on ANY screen width
-   - Mobile (<=749px): 20px left-right space
-   ============================================================ */
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   /* highlighted section css */
 
