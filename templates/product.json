@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_hFAzaf": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -32,6 +26,12 @@
         "description": {
           "type": "description",
           "settings": {}
+        },
+        "custom_liquid_hFAzaf": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- liquid\n  assign roast_text = product.metafields.custom.roast_level.value\n  assign roast_key  = roast_text | strip | downcase\n  assign roast_count = 0\n\n  case roast_key\n    when 'medium light roast'\n      assign roast_count = 1\n    when 'medium roast'\n      assign roast_count = 2\n    when 'medium dark roast'\n      assign roast_count = 3\n    when 'dark roast'\n      assign roast_count = 4\n  endcase\n\n  # ---- FALLBACK: metafield khali ho to tags / title se detect karo ----\n  if roast_count == 0\n    assign p_title = product.title | downcase\n\n    if product.tags contains 'Medium Light Roast' or p_title contains 'medium light roast'\n      assign roast_count = 1\n      assign roast_text = 'Medium Light Roast'\n    elsif product.tags contains 'Medium Dark Roast' or p_title contains 'medium dark roast'\n      assign roast_count = 3\n      assign roast_text = 'Medium Dark Roast'\n    elsif product.tags contains 'Medium Roast' or p_title contains 'medium roast'\n      assign roast_count = 2\n      assign roast_text = 'Medium Roast'\n    elsif product.tags contains 'Dark Roast' or p_title contains 'dark roast'\n      assign roast_count = 4\n      assign roast_text = 'Dark Roast'\n    endif\n  endif\n-%}\n\n{%- if roast_count > 0 -%}\n<div class=\"roast-level-widget\">\n  <div class=\"roast-circles\" aria-label=\"{{ roast_text }} - {{ roast_count }} out of 4\">\n    {%- for i in (1..4) -%}\n      <span class=\"roast-dot{% if i <= roast_count %} is-filled{% endif %}\"></span>\n    {%- endfor -%}\n  </div>\n  <div class=\"roast-copy\">\n    <span class=\"roast-name\">{{ roast_text | upcase }}</span>\n    <span class=\"roast-sep\">|</span>\n    <span class=\"roast-arabica\">100% ARABICA COFFEE</span>\n  </div>\n</div>\n\n<style>\n  .roast-level-widget{\n    display:flex;\n    align-items:center;\n    gap:14px;\n    background:#f4e9e1;\n    padding:10px 18px;\n    border-radius:6px;\n    flex-wrap:wrap;\n    width:fit-content;\n  }\n  .roast-circles{ display:flex; gap:6px; }\n  .roast-dot{\n    width:13px;\n    height:13px;\n    border-radius:50%;\n    border:2px solid #c1694f;\n    display:inline-block;\n    background:transparent;\n  }\n  .roast-dot.is-filled{ background:#c1694f; }\n  .roast-copy{\n    font-size:12px;\n    font-weight:700;\n    letter-spacing:.5px;\n    color:#8a4530;\n  }\n  .roast-sep{ margin:0 10px; opacity:.5; }\n</style>\n{%- endif -%}"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -63,10 +63,10 @@
         }
       },
       "block_order": [
-        "custom_liquid_hFAzaf",
         "title",
         "vendor",
         "description",
+        "custom_liquid_hFAzaf",
         "variant_picker",
         "quantity_selector",
         "price",
