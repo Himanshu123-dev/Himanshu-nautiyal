@@ -163,6 +163,13 @@ height: 595px;
   }
 }
 
+@media (max-width:1200px)
+{
+  .coffee-story__panel{
+    padding: 64px 0 0 28px;
+  }
+}
+
 @media (max-width: 989px) {
   .coffee-story__inner {
     grid-template-columns: 1fr;
