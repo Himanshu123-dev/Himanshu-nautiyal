@@ -5,8 +5,8 @@
   /* highlighted section css */
 
   .tb-container {
-    max-width: calc(100% - 128px); 
-    margin:0 auto;
+    /* max-width: calc(100% - 128px); 
+    margin:0 auto; */
   }
   .tb-row {
     display: flex;

@@ -13,7 +13,8 @@
     --tb-divider-color: {{ section.settings.divider_color }};
   "
 >
-  <div class="tb-container">
+  <div class="tb-container" style=" max-width: calc(100% - 128px); 
+    margin:0 auto;">
     <div class="tb-row">
       {% for block in section.blocks %}
         {% if block.type == 'feature' %}
