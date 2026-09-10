@@ -20,14 +20,14 @@
   .brewing-methods-{{ section.id }} .brewing-methods__inner {
     max-width: 1366px;
     margin: 0 auto;
-    padding: 0 40px 61px;
+    padding: 0 40px 35px;
   }
 
   
  .brewing-methods__row {
     display: flex;
     gap: 243px;
-    /* justify-content: space-around; */
+    justify-content: space-around;
 }
 
   .brewing-methods-{{ section.id }} .brewing-methods__content {
@@ -208,6 +208,15 @@
   }
 
   /* ---- responsive ---- */
+@media (max-width:1366px)
+{
+  .brewing-methods-{{ section.id }} .brewing-methods__inner {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 61px 35px;
+  }
+}
+
   @media (max-width: 989px) {
     .brewing-methods-{{ section.id }} .brewing-methods__row {
       gap: 40px;
