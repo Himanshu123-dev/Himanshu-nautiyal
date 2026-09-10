@@ -4,17 +4,18 @@
 
 
 p.coffee-story__eyebrow {
-    position: relative;
-    left: 62%;
-    width: 18%;
-    color: #2D3C4B;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 20px 0 16px 0;
-    height: 29px;
-    display: flex;
-    text-transform: uppercase;
-    align-items: center;
+  position: relative;
+  left: 62%;
+  width: 18%;
+  color: #2d3c4b;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0 16px 0;
+  height: 29px;
+  display: flex;
+  text-transform: uppercase;
+  align-content: center;
+  align-items: center;
 }
 
 .coffee-story__inner {
