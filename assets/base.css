@@ -79,54 +79,7 @@ collection-component {
   --shadow-visible: var(--media-shadow-visible);
 }
 
-.product__title h1 {
-    font-size: 24px;
-    font-weight: 800;
-    font-family: 'Lato';
-    color: #24394A;
-    text-transform: uppercase;
-    letter-spacing: 8%;
-    padding-bottom: 16px;
-}
 
-p.product__text {
-    font-size: 17px;
-    font-family: 'Lato';
-    color: #883434;
-    font-weight: 700;
-    letter-spacing: 4%;
-}
-
-.product__description {
-    font-size: 12px;
-    line-height: 19px;
-    font-family: 'Merriweather';
-    color: #24394A;
-    font-weight: 400;
-    letter-spacing: 4%;
-    margin-top: 0;
-}
-
-.product__description{
-    font-size: 12px;
-    line-height: 19px;
-    font-family: 'Merriweather';
-    color: #24394A;
-    font-weight: 400;
-    letter-spacing: 4%;
-    margin: 0 0 17px 0 !important;
-}
-
-.option-name {
-    display: block;
-    margin-bottom: .6rem;
-    font-size: 10px;
-    font-family: 'Lato';
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 4%;
-    color: #2D3C4B;
-}
 
 
 /* base */
