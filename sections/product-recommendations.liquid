@@ -97,11 +97,11 @@
   .yml-card {
     display: flex;
     flex-direction: column;
-    width:322px;
+    /* width:322px; */
     align-items: center
-    /* flex: 1 1 calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
-    max-width: calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols)); */
-  }
+    flex: 1 1 calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
+    max-width: calc((100% - (var(--yml-cols) - 1) * 20px) / var(--yml-cols));
+  } 
   @media (max-width: 989px) {
     .yml-card {
       flex: 1 1 calc((100% - 20px) / 2);
