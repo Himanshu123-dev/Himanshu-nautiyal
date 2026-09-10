@@ -99,8 +99,8 @@
 
   .brewing-methods-{{ section.id }} .brewing-methods__image {
     width: 100%;
-    max-width: var(--bm-image-w);
-    height: var(--bm-image-h);
+    /* max-width: var(--bm-image-w);
+    height: var(--bm-image-h); */
     object-fit: cover;
     display: block;
   }
