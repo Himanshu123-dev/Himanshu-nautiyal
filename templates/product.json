@@ -232,12 +232,12 @@
     "coffee_story_i4eEhp": {
       "type": "coffee-story",
       "custom_css": [
-        "p.coffee-story__eyebrow {position: relative; left: 62%; width: 15%; color: #2d3c4b; font-size: 24px; font-weight: 700; margin: 20px 0 16px 0; height: 29px; display: flex; text-transform: uppercase; align-content: center; align-items: center;}"
+        "p.coffee-story__eyebrow {position: relative; left: 62%; width: 18%; color: #2d3c4b; font-size: 24px; font-weight: 700; margin: 20px 0 16px 0; height: 29px; display: flex; text-transform: uppercase; align-content: center; align-items: center;}"
       ],
       "name": "Coffee story",
       "settings": {
         "eyebrow": "Try our recipe",
-        "heading": "100% ARABICA COFFEE,<br>SOURCED RESPONSIBLY,<br>ROASTED CAREFULLY.",
+        "heading": "100% ARABICA COFFEE,SOURCED RESPONSIBLY,ROASTED CAREFULLY.",
         "body_text": "<p>Our coffee is 100% Arabica and contains no preservatives or additives. We directly source it from farms, working closely with growers to make sure that your coffee is of the highest quality, grown sustainably and traded ethically. Our selections are specially roasted in our in-house, state-of-the-art roaster with specific profiles to ensure optimal flavour notes. True to our namesake, we pay close attention to every link in the supply chain and every detail of the coffee experience.</p>",
         "illustration": "shopify://shop_images/ProductCollection_100percentArabica.svg",
         "image": "shopify://shop_images/DSC_8198_1.jpg",
