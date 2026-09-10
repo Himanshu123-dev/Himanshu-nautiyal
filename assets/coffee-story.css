@@ -3,6 +3,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 
+p.coffee-story__eyebrow {
+    position: relative;
+    left: 62%;
+    width: 18%;
+    color: #2D3C4B;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0 16px 0;
+    height: 29px;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+}
 
 .coffee-story__inner {
   margin: 0 auto;
