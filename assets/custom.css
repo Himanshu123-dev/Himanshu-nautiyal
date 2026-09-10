@@ -4,13 +4,9 @@
 
   /* highlighted section css */
 
-  .tb-section {
-    padding: 48px 0;
-    margin-top: 55px;
-  }
   .tb-container {
     max-width: calc(100% - 128px); 
-    margin: 0 auto;
+    margin:55px auto 0 auto
   }
   .tb-row {
     display: flex;
