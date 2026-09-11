@@ -208,7 +208,7 @@
                           </span>
                         </button>
                         <input
-                          class="quantity__input"
+                          class="quantity__input sjdak"
                           type="number"
                           name="quantity"
                           id="Quantity-{{ section.id }}"
@@ -231,7 +231,6 @@
                             {{- 'icon-plus.svg' | inline_asset_content -}}
                           </span>
                         </button>
-                        jdnfkdfn
                       </quantity-input>
                       {%- liquid
                         assign volume_pricing_array = product.selected_or_first_available_variant.quantity_price_breaks | sort: 'quantity' | reverse
