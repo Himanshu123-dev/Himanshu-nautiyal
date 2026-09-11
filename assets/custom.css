@@ -675,9 +675,9 @@ button#ProductSubmitButton-template--22995164102895__main {
     letter-spacing: 4%;
 }
 
-.button:after, .shopify-payment-button__button--unbranded:after {
+.button:after {
     border-radius: 0 14px 0 14px;
-    /* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background)); */
+    box-shadow: none !important;
 }
 
 .button, .button-label {
@@ -692,23 +692,7 @@ button#ProductSubmitButton-template--22995164102895__main {
 
 .button {
     border-radius: 0 14px 0 14px;
-    /* background-color: rgba(var(--color-button),var(--alpha-button-background)); */
 }
-
-/* button.shopify-payment-button__button--unbranded {
-    border-radius: 0 14px 0 14px;
-    
-}
-
-.shopify-payment-button__button--unbranded {
-    background-color: #2D3C4B !important;
-    color:#E7DEDE;
-    font-size:12px !important;
-    font-family:'Lato'!important;
-    font-weight:400 !important;
-    text-transform:uppercase;
-    letter-spacing: 4%;
-} */
 
 span.atc-btn {
     width: 233px;
