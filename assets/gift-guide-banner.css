@@ -165,6 +165,7 @@
   margin: 0;
   font-size: 16px;
   font-family:'Jost';
+  font-weight:400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--bottombar-color, #111);
