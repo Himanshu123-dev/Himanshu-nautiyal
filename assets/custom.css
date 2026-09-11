@@ -652,6 +652,7 @@ height: 595px;
 }
 button#ProductSubmitButton-template--22995164102895__main {
     width: 203px;
+     height:40px;
     padding:0 14px;
 }
 
@@ -662,6 +663,7 @@ button#ProductSubmitButton-template--22995164102895__main {
 
 #customBuyNowBtn{
   width: 203px;
+  height:40px;
   padding:0 14px;
   border-radius: 0 14px 0 14px;
    background-color: #2D3C4B !important;
