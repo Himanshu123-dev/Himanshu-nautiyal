@@ -720,10 +720,10 @@ span.atc-btn {
   opacity: 0.7;
 }
 .breadcrumb-sep {
-  margin: 0 2px;
+  margin: 0 1px;
   font-family: 'Lato';
   color: #2D3C4B;
 }
 .breadcrumb-current {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
