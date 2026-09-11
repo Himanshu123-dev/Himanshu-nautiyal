@@ -128,25 +128,14 @@ if (!customElements.get('product-info')) {
             // set focus to last clicked option value
             document.querySelector(`#${targetId}`)?.focus();
           })
-          // .catch((error) => {
-          //   if (error.name === 'AbortError') {
-          //     console.log('Fetch aborted by user');
-          //   } else {
-          //     console.error(error);
-          //   }
-          //   this.variantSelectors?.rejectPendingSelectPromise(error);
-          // });
           .catch((error) => {
-  if (error.name === 'AbortError') {
-    // Previous request was intentionally cancelled.
-    // Do not treat this as an actual error.
-    return;
-  }
-
-  console.error('Product info request failed:', error);
-
-  this.variantSelectors?.rejectPendingSelectPromise(error);
-});
+            if (error.name === 'AbortError') {
+              console.log('Fetch aborted by user');
+            } else {
+              console.error(error);
+            }
+            this.variantSelectors?.rejectPendingSelectPromise(error);
+          });
       }
 
       parseJsonScript(parent, selector) {
@@ -337,97 +326,30 @@ if (!customElements.get('product-info')) {
         if (modalContent && newModalContent) modalContent.innerHTML = newModalContent.innerHTML;
       }
 
-      // setQuantityBoundries() {
-      //   const data = {
-      //     cartQuantity: this.quantityInput.dataset.cartQuantity ? parseInt(this.quantityInput.dataset.cartQuantity) : 0,
-      //     min: this.quantityInput.dataset.min ? parseInt(this.quantityInput.dataset.min) : 1,
-      //     max: this.quantityInput.dataset.max ? parseInt(this.quantityInput.dataset.max) : null,
-      //     step: this.quantityInput.step ? parseInt(this.quantityInput.step) : 1,
-      //   };
-
-      //   let min = data.min;
-      //   const max = data.max === null ? data.max : data.max - data.cartQuantity;
-      //   if (max !== null) min = Math.min(min, max);
-      //   if (data.cartQuantity >= data.min) min = Math.min(min, data.step);
-
-      //   this.quantityInput.min = min;
-
-      //   if (max) {
-      //     this.quantityInput.max = max;
-      //   } else {
-      //     this.quantityInput.removeAttribute('max');
-      //   }
-      //   this.quantityInput.value = min;
-
-      //   publish(PUB_SUB_EVENTS.quantityUpdate, undefined);
-      // }
-
       setQuantityBoundries() {
-  const data = {
-    cartQuantity: this.quantityInput.dataset.cartQuantity
-      ? parseInt(this.quantityInput.dataset.cartQuantity)
-      : 0,
+        const data = {
+          cartQuantity: this.quantityInput.dataset.cartQuantity ? parseInt(this.quantityInput.dataset.cartQuantity) : 0,
+          min: this.quantityInput.dataset.min ? parseInt(this.quantityInput.dataset.min) : 1,
+          max: this.quantityInput.dataset.max ? parseInt(this.quantityInput.dataset.max) : null,
+          step: this.quantityInput.step ? parseInt(this.quantityInput.step) : 1,
+        };
 
-    min: this.quantityInput.dataset.min
-      ? parseInt(this.quantityInput.dataset.min)
-      : 1,
+        let min = data.min;
+        const max = data.max === null ? data.max : data.max - data.cartQuantity;
+        if (max !== null) min = Math.min(min, max);
+        if (data.cartQuantity >= data.min) min = Math.min(min, data.step);
 
-    max: this.quantityInput.dataset.max
-      ? parseInt(this.quantityInput.dataset.max)
-      : null,
+        this.quantityInput.min = min;
 
-    step: this.quantityInput.step
-      ? parseInt(this.quantityInput.step)
-      : 1,
-  };
+        if (max) {
+          this.quantityInput.max = max;
+        } else {
+          this.quantityInput.removeAttribute('max');
+        }
+        this.quantityInput.value = min;
 
-  let min = data.min;
-
-  const max =
-    data.max === null
-      ? data.max
-      : data.max - data.cartQuantity;
-
-  if (max !== null) {
-    min = Math.min(min, max);
-  }
-
-  if (data.cartQuantity >= data.min) {
-    min = Math.min(min, data.step);
-  }
-
-  this.quantityInput.min = min;
-
-  if (max !== null) {
-    this.quantityInput.max = max;
-  } else {
-    this.quantityInput.removeAttribute('max');
-  }
-
-  /*
-   * IMPORTANT:
-   * Existing quantity ko reset mat karo.
-   */
-  let currentValue = parseInt(this.quantityInput.value);
-
-  if (isNaN(currentValue)) {
-    currentValue = min;
-  }
-
-  // Current quantity minimum se kam hai
-  if (currentValue < min) {
-    currentValue = min;
-  }
-
-  // Current quantity maximum se zyada hai
-  if (max !== null && currentValue > max) {
-    currentValue = max;
-  }
-
-  this.quantityInput.value = currentValue;
-
-  publish(PUB_SUB_EVENTS.quantityUpdate, undefined);
-}
+        publish(PUB_SUB_EVENTS.quantityUpdate, undefined);
+      }
 
       fetchQuantityRules() {
         const currentVariantId = this.productForm?.variantIdInput?.value;
