@@ -15,7 +15,7 @@
         "breadcrumb_XYeNah": {
           "type": "breadcrumb",
           "settings": {
-            "shop_label": "Task",
+            "shop_label": "Shop",
             "show_collection": true
           }
         },
