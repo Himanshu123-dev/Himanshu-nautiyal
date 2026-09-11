@@ -726,3 +726,11 @@ span.atc-btn {
 .breadcrumb-current {
   /* text-decoration: underline; */
 }
+
+span.price-item.price-item--regular {
+    font-size: 24px;
+    font-family: 'Lato';
+    color: #2D3C4B;
+    font-weight: 600;
+    letter-spacing: 4%;
+}
