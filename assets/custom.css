@@ -734,3 +734,32 @@ span.price-item.price-item--regular {
     font-weight: 600;
     letter-spacing: 4%;
 }
+
+
+/* ---- SIZE + QUANTITY same row me ---- */
+
+.product-form .form,
+form[data-type="add-to-cart-form"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+variant-selects {
+  display: contents;
+}
+
+.product-form__input--dropdown,
+.product-form__error-message-wrapper,
+.product-form__buttons {
+  flex: 1 1 100%;
+}
+
+.product-form__input--dropdown:has(select[name="options[SIZE]"]) {
+  flex: 1 1 calc(50% - 8px);
+}
+
+.product-form__quantity {
+  flex: 1 1 calc(50% - 8px);
+}
