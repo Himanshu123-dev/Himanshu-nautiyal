@@ -55,17 +55,18 @@
           "type": "price",
           "settings": {}
         },
+        "text_NUemiD": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "uppercase"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
           }
         }
       },
@@ -78,8 +79,8 @@
         "variant_picker",
         "quantity_selector",
         "price",
-        "buy_buttons",
-        "share"
+        "text_NUemiD",
+        "buy_buttons"
       ],
       "settings": {
         "enable_sticky_info": false,
