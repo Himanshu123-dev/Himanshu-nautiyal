@@ -674,7 +674,6 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .shopify-payment-button__button--unbranded {
-    background-color: transparent;
+    background-color: transparent !important;
     color: rgb(var(--color-button-text));
-    
 }
