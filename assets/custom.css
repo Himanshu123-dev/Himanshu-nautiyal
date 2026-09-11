@@ -668,7 +668,7 @@ button#ProductSubmitButton-template--22995164102895__main {
     text-transform: uppercase;
     font-family: 'Lato';
     letter-spacing: 4%;
-    font-weight: 400;
+    font-weight: 400 !important;
      background-color: #2D3C4B !important;
     color:#E7DEDE;
 }
@@ -690,4 +690,11 @@ button.shopify-payment-button__button--unbranded {
     font-family:'Lato'!important;
     font-weight:400 !important;
     text-transform:uppercase;
+    letter-spacing: 4%;
+}
+
+span.atc-btn {
+    width: 233px;
+    display: flex;
+    justify-content: space-between;
 }
