@@ -703,10 +703,8 @@ span.atc-btn {
 
 /* breadcrumb */
 .product-breadcrumb {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  margin-bottom: 20px;
+ text-decoration: underline;
+  margin-bottom: 35px;
 }
 .product-breadcrumb a, .breadcrumb-current {
     color: inherit;
