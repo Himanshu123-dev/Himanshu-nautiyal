@@ -124,7 +124,7 @@
 
 .product-popup__image {
  width: 120px;
- height: 113px;
+ height: 125px;
   display: block;
   object-fit: cover;
 }
@@ -140,7 +140,7 @@
   font-size: 16px;
   font-family:'jost';
   font-weight: 300;
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
 .product-popup__price {
