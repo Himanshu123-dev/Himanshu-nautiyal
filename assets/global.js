@@ -1065,22 +1065,44 @@ class VariantSelects extends HTMLElement {
     super();
   }
 
+  // connectedCallback() {
+  //   this.addEventListener('change', (event) => {
+  //     const target = this.getInputForEventTarget(event.target);
+  //     this.updateSelectionMetadata(event);
+
+  //     this.dispatchProductSelectEvent();
+
+  //     publish(PUB_SUB_EVENTS.optionValueSelectionChange, {
+  //       data: {
+  //         event,
+  //         target,
+  //         selectedOptionValues: this.selectedOptionValues,
+  //       },
+  //     });
+  //   });
+  // }
+
+
   connectedCallback() {
-    this.addEventListener('change', (event) => {
-      const target = this.getInputForEventTarget(event.target);
-      this.updateSelectionMetadata(event);
+  this.addEventListener('change', (event) => {
+    // Ignore quantity input changes
+    if (event.target.closest('quantity-input')) return;
 
-      this.dispatchProductSelectEvent();
+    const target = this.getInputForEventTarget(event.target);
 
-      publish(PUB_SUB_EVENTS.optionValueSelectionChange, {
-        data: {
-          event,
-          target,
-          selectedOptionValues: this.selectedOptionValues,
-        },
-      });
+    this.updateSelectionMetadata(event);
+
+    this.dispatchProductSelectEvent();
+
+    publish(PUB_SUB_EVENTS.optionValueSelectionChange, {
+      data: {
+        event,
+        target,
+        selectedOptionValues: this.selectedOptionValues,
+      },
     });
-  }
+  });
+}
 
   getAllSelectedOptions() {
     const options = [];
