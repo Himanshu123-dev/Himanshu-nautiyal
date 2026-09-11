@@ -652,10 +652,12 @@ height: 595px;
 }
 button#ProductSubmitButton-template--22995164102895__main {
     width: 203px;
+    padding:0 14px;
 }
 
 .shopify-payment-button {
     width: 203px;
+    padding:0 14px;
 }
 
 .button:after, .shopify-payment-button__button--unbranded:after {
