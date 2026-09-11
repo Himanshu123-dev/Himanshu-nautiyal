@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "breadcrumb_XYeNah": {
+          "type": "breadcrumb",
+          "settings": {
+            "shop_label": "Task",
+            "show_collection": true
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -63,6 +70,7 @@
         }
       },
       "block_order": [
+        "breadcrumb_XYeNah",
         "title",
         "vendor",
         "description",
