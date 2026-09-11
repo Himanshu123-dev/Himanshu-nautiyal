@@ -674,6 +674,10 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .shopify-payment-button__button--unbranded {
-    background-color: transparent !important;
-    color: rgb(var(--color-button-text));
+    background-color: #2D3C4B !important;
+    color:#E7DEDE;
+    font-size:12px;
+    font-family:'Lato';
+    font-weight:400;
+    text-transform:uppercase;
 }
