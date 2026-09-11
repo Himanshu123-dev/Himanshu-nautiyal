@@ -55,13 +55,6 @@
           "type": "price",
           "settings": {}
         },
-        "text_NUemiD": {
-          "type": "text",
-          "settings": {
-            "text": "Subscribe and save!",
-            "text_style": "subtitle"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -79,7 +72,6 @@
         "variant_picker",
         "quantity_selector",
         "price",
-        "text_NUemiD",
         "buy_buttons"
       ],
       "settings": {
