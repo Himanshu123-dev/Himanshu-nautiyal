@@ -125,13 +125,14 @@
   display: none;
 }
 
-.gift-banner__content {
-  position: relative;
-  z-index: 1;
-  max-width: 460px;
-  padding: 40px 56px;
-  color: var(--heading-color, #111);
-  top:180px;
+
+ .gift-banner__content {
+    position: relative;
+    z-index: 1;
+    max-width: 460px;
+    padding: 36px 56px;
+    color: var(--heading-color, #111);
+    top: 154px;
 }
 
 .gift-banner__heading {
@@ -148,7 +149,8 @@
   font-size: 20px;
  font-family:'Jost';
  font-weight:400;
-  line-height: 1.6;
+ font-size:'Regular';
+  line-height: 1.2;
   margin: 0 0 50px;
   min-width: 420px;
   color: var(--heading-color, #111);
