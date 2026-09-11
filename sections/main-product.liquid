@@ -91,6 +91,21 @@
               {%- case block.type -%}
                 {%- when '@app' -%}
                   {% render block %}
+
+                {% comment %} breadcrumb {% endcomment %}
+                  {% when 'breadcrumb' %}
+                  <nav class="product-breadcrumb" {{ block.shopify_attributes }}>
+                  <a href="/">{{ block.settings.shop_label }}</a>
+                  {% if block.settings.show_collection and product.collections.size > 0 %}
+                    <span class="breadcrumb-sep">&gt;</span>
+                    <a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a>
+                  {% endif %}
+                  <span class="breadcrumb-sep">&gt;</span>
+                  <span class="breadcrumb-current">{{ product.title }}</span>
+                </nav>
+   
+
+
                 {%- when 'text' -%}
                   <p
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
