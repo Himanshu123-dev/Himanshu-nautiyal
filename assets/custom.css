@@ -660,7 +660,17 @@ button#ProductSubmitButton-template--22995164102895__main {
 
 .button:after, .shopify-payment-button__button--unbranded:after {
     border-radius: 0 14px 0 14px;
-    box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+    /* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background)); */
+}
+
+.button, .button-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'Lato';
+    letter-spacing: 4%;
+    font-weight: 400;
+     background-color: #2D3C4B !important;
+    color:#E7DEDE;
 }
 
 .button {
