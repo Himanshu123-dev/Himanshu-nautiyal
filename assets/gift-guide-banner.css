@@ -145,8 +145,9 @@
 }
 
 .gift-banner__description {
-  font-size: 16px;
+  font-size: 20px;
  font-family:'Jost';
+ font-weight:400;
   line-height: 1.6;
   margin: 0 0 50px;
   min-width: 420px;
