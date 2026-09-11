@@ -118,12 +118,22 @@
     align-items: flex-start;
     justify-content: center;
     width: 50%;
-    gap: 0px;
+    gap: 20px;
   }
   .product-form__size-quantity-row > * {
     flex: 1 1 0;
     min-width: 0;
   }
+
+  .product-form__input.product-form__input--dropdown:first-child {
+  width: 300px !important;
+  max-width: 350px !important;
+}
+
+.product-form__input.product-form__input--dropdown:first-child .select,
+.product-form__input.product-form__input--dropdown:first-child select {
+  width: 100% !important;
+}
 </style>
 {%- unless product.has_only_default_variant -%}
   <variant-selects
