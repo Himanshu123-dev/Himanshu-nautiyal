@@ -139,21 +139,21 @@
   margin: 0 0 6px;
   font-size: 16px;
   font-family:'jost';
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .product-popup__price {
   margin: 0 0 6px;
   font-size: 14px;
   font-family:'jost';
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .product-popup__description {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-family:'jost';
-  color: #666;
+  color: #000;
   line-height: 1.1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -168,11 +168,13 @@
 .product-popup__option-label {
   display: block;
   font-size: 14px;
+  font-weight:400;
+  font-style:'regular';
   font-family:'jost';
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 6px;
-  color: #333;
+  color: #000;
 }
 
 .product-popup__swatches {
@@ -188,8 +190,9 @@
   padding: 10px 12px;
   font-size: 18px;
   font-family:'jost';
+  font-weight:400;
   cursor: pointer;
-  color: #222;
+  color: #000;
   text-align:left;
   width:100%;
 }
@@ -198,7 +201,7 @@
   border-right: none;
 }
 .product-popup__option--dropdown{
-margin-bottom:51px;
+margin-bottom:37px;
 
 }
 /* .product-popup__swatch.is-selected {
@@ -209,8 +212,9 @@ margin-bottom:51px;
 .product-popup__size-select {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #222;
+  border: 1px solid #000;
   font-size: 16px;
+  font-weight:400;
   font-family: 'Jost';
   background: #fff;
 }
@@ -220,15 +224,16 @@ margin-bottom:51px;
   background: #111;
   color: #fff;
   border: none;
-  padding: 14px 16px;
+  padding: 0p 16px;
   font-size: 16px;
+  font-weight:400;
   font-family:'jost';
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
 }
 span.arrow {
