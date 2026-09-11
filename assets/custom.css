@@ -643,3 +643,38 @@ height: 595px;
       max-width: calc(100% - 40px);
     }
   }
+
+  /* button */
+  .product-form__buttons {
+    display: flex;
+    max-width: 100%;
+    gap: 20px;
+}
+button#ProductSubmitButton-template--22995164102895__main {
+    width: 35%;
+}
+
+.shopify-payment-button {
+    width: 35%;
+}
+
+.button:after, .shopify-payment-button__button--unbranded:after {
+    border-radius: 0 14px 0 14px;
+    box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+}
+
+.button {
+    border-radius: 0 14px 0 14px;
+    background-color: rgba(var(--color-button),var(--alpha-button-background));
+}
+
+button.shopify-payment-button__button--unbranded {
+    border-radius: 0 14px 0 14px;
+    
+}
+
+.shopify-payment-button__button--unbranded {
+    background-color: transparent;
+    color: rgb(var(--color-button-text));
+    
+}
