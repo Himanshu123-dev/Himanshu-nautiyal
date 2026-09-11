@@ -58,8 +58,8 @@
         "text_NUemiD": {
           "type": "text",
           "settings": {
-            "text": "",
-            "text_style": "uppercase"
+            "text": "Subscribe and save!",
+            "text_style": "subtitle"
           }
         },
         "buy_buttons": {
