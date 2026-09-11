@@ -191,8 +191,9 @@
 }
 
 .gift-banner__btn--top {
-  background: var(--top-btn-bg, #f6e100);
-  color: var(--top-btn-color, #111);
+    background: var(--top-btn-bg, #f6e100);
+    color: var(--top-btn-color, #111);
+    gap: 20px;
 }
 
 .gift-banner__btn--main {
