@@ -809,7 +809,7 @@ label.quantity__label.form__label {
         padding: 0 0rem;
     }
 
-    @media (max-width:1400px){
+    @media (max-width:1445px){
       .page-width {
     padding: 0 5rem;
 }
