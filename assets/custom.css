@@ -809,3 +809,8 @@ sticky-header.header-wrapper {
         padding: 0 0rem;
     }
  {% endif %}   
+
+ .product__info-wrapper.grid__item {
+    display: flex;
+    justify-content: flex-end;
+}
