@@ -808,6 +808,12 @@ label.quantity__label.form__label {
     .page-width {
         padding: 0 0rem;
     }
+
+    @media (max-width:1400px){
+      .page-width {
+    padding: 0 5rem;
+}
+    }
  {% endif %}   
 
  .product__info-wrapper.grid__item {
