@@ -67,7 +67,7 @@
         "custom_liquid_gmCqLQ": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"extra-info\">\n    <div class=\"content-info\">\n         <h3>Suitable for:</h3>\n        <p>{{ product.metafields.custom.suitable_for }}</p>\n    </div>\n    \n    <div class=\"content-info\">\n        <h3>Pairs with:</h3>\n        <p>{{ product.metafields.custom.pairs_with }}</p>\n    </div>\n</div>"
+            "custom_liquid": "<div class=\"extra-info\">\n    <div class=\"content-info\">\n         <h3>Suitable for:</h3>\n        <p>{{ product.metafields.custom.suitable_for }}</p>\n    </div>\n    \n    <div class=\"content-info\">\n        <h3>Pairs with:</h3>\n        <p>{{ product.metafileds.custom.pair_with.value }}</p>\n    </div>\n</div>"
           }
         }
       },
