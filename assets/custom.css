@@ -794,3 +794,8 @@ label.quantity__label.form__label span {
     color: #2D3C4B !important;
     text-transform: uppercase;
 }
+
+label.quantity__label.form__label {
+    height: 17px !important;
+    display: flex !important;
+}
