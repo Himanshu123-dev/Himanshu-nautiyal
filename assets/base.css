@@ -167,7 +167,10 @@ p.product__text {
     color: #2D3C4B;
 }
 
-
+.header-wrapper.color-scheme-1.gradient.header-wrapper--border-bottom {
+  background-color: #d4b6b466 !important;
+  border-bottom: none;
+}
 
 /* base */
 
