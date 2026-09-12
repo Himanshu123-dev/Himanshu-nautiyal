@@ -761,6 +761,7 @@ div#price-template--22995164102895__main {
     font-family: 'Merriweather';
     font-weight: 300;
     letter-spacing: 4%;
+    margin:0;
 }
 
 .content-info h3 {
@@ -768,4 +769,6 @@ div#price-template--22995164102895__main {
     font-family: 'Merriweather';
     font-weight: 600;
     letter-spacing: 4%;
+    margin:0;
 }
+
