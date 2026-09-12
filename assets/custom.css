@@ -739,7 +739,9 @@ span.price-item.price-item--regular {
   .price--large price--show-badge, .price__container, .price__regular{
     height:21px;
   }
-
+product-form.product-form {
+    margin: 37px 0 16px 0; !important;
+}
 
 /* ---- SIZE + QUANTITY same row me ---- */
 
