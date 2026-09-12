@@ -786,3 +786,11 @@ div#price-template--22995164102895__main {
 select#Option-template--22995164102895__main-0 {
     background: transparent !important;
 }
+
+label.quantity__label.form__label span {
+    font-size: 10px !important;
+    font-family: 'Lato' !important;
+    font-weight: 400 !important;
+    color: #2D3C4B !important;
+    text-transform: uppercase;
+}
