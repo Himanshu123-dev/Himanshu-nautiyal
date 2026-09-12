@@ -747,5 +747,10 @@ div#price-template--22995164102895__main {
     margin-top: 17px;
 }
 
-/* ---- SIZE + QUANTITY same row me ---- */
+.extra-info {
+    display: flex;
+    /* gap: 70px; */
+}
+
+
 
