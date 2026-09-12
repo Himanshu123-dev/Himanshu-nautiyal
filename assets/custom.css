@@ -796,8 +796,8 @@ label.quantity__label.form__label {
     display: flex !important;
 }
 
-sticky-header.header-wrapper {
-    background: #D4B6B466 !important;
+.header-wrapper {
+    background-color: #D4B6B466 !important;
     border-bottom: none;
 }
 .product.product--medium {
