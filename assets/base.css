@@ -156,11 +156,11 @@ p.product__text {
 .option-name {
     display: block;
     margin-bottom: .6rem;
-    font-size: 10px;
-    font-family: 'Lato';
+    font-size: 10px !important;
+    font-family: 'Lato' !important;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 4%;
+    letter-spacing: 4% !important;
     color: #2D3C4B;
 }
 
