@@ -796,6 +796,6 @@ label.quantity__label.form__label span {
 }
 
 label.quantity__label.form__label {
-    height: 17px !important;
+    /* height: 17px !important; */
     display: flex !important;
 }
