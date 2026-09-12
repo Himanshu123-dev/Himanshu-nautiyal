@@ -729,8 +729,16 @@ span.price-item.price-item--regular {
     font-family: 'Lato';
     color: #2D3C4B;
     font-weight: 600;
+    height: 21px;
+    display: flex;
     letter-spacing: 4%;
+    align-items: center;
 }
+
+
+  price .price--large price--show-badge,.price__container, .price__regular{
+    height:21px;
+  }
 
 
 /* ---- SIZE + QUANTITY same row me ---- */
