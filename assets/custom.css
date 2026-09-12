@@ -756,7 +756,10 @@ div#price-template--22995164102895__main {
     margin-right: 23px;
 }
 
-.content-info p{
-  
+.content-info p {
+    font-size: 14px;
+    font-family: 'Merriweather';
+    font-weight: 300;
+    letter-spacing: 4%;
 }
 
