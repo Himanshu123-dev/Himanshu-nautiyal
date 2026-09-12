@@ -83,25 +83,21 @@ section.brewing-methods {
  .brewing-methods__row {
     display: flex;
     gap: 243px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
   .brewing-methods-{{ section.id }} .brewing-methods__content {
-    /* flex: 1 1 360px; */
     max-width: 460px;
     padding-top: 35px;
   }
 
   .brewing-methods-{{ section.id }} .brewing-methods__media {
-    /* flex: 1 1 400px; */
     display: flex;
     padding-top: 35px;
   }
 
   .brewing-methods-{{ section.id }} .brewing-methods__image {
     width: 100%;
-    /* max-width: var(--bm-image-w);
-    height: var(--bm-image-h); */
     object-fit: cover;
     display: block;
   }
@@ -804,3 +800,12 @@ sticky-header.header-wrapper {
     background: #D4B6B466;
     border-bottom: none;
 }
+.product.product--medium {
+    margin-bottom: 50px;
+}
+
+{%  if request.page_type == 'product'  %}
+    .page-width {
+        padding: 0 0rem;
+    }
+ {% endif %}   
