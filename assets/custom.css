@@ -799,3 +799,8 @@ label.quantity__label.form__label {
     /* height: 17px !important; */
     display: flex !important;
 }
+
+sticky-header.header-wrapper {
+    background: #D4B6B466;
+    border-bottom: none;
+}
