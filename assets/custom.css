@@ -736,7 +736,7 @@ span.price-item.price-item--regular {
 }
 
 
-  price .price--large price--show-badge,.price__container, .price__regular{
+  .price--large price--show-badge, .price__container, .price__regular{
     height:21px;
   }
 
