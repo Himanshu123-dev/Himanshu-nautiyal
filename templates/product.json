@@ -57,6 +57,12 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
+        },
+        "share_rGFj7R": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
         }
       },
       "block_order": [
@@ -67,7 +73,8 @@
         "custom_liquid_hFAzaf",
         "variant_picker",
         "price",
-        "buy_buttons"
+        "buy_buttons",
+        "share_rGFj7R"
       ],
       "settings": {
         "enable_sticky_info": false,
