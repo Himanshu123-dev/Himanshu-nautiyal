@@ -776,3 +776,13 @@ div#price-template--22995164102895__main {
     color: #2D3C4B;
 }
 
+.option-name {
+    display: block;
+    margin-bottom: .6rem;
+    font-size: 10px !important;
+    font-family: Lato;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 4%;
+    color: #2d3c4b;
+}
