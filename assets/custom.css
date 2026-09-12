@@ -786,6 +786,9 @@ div#price-template--22995164102895__main {
 select#Option-template--22995164102895__main-0 {
     background: transparent !important;
 }
+.select__select{
+   background: transparent !important;
+}
 
 label.quantity__label.form__label span {
     font-size: 10px !important;
