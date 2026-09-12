@@ -38,13 +38,16 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        "sticky-header.header-wrapper {background-color: #D4B6B466 !important; border-bottom: none;}"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "none",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
