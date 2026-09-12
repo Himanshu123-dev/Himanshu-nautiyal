@@ -43,6 +43,7 @@ collection-component {
 
   media-gallery[data-desktop-layout='slide'] .slider-dots {
     display: flex;
+    bottom: 40px;
   }
 }
 
