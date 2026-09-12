@@ -756,21 +756,23 @@ div#price-template--22995164102895__main {
     margin-right: 23px;
 }
 
+
+.content-info h3 {
+    font-size: 14px;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    letter-spacing: 4%;
+    line-height:22px;
+    margin:0;
+    color: #2D3C4B;
+}
 .content-info p {
     font-size: 14px;
     font-family: 'Merriweather';
     font-weight: 300;
     letter-spacing: 4%;
     margin:0;
-     color: #2D3C4B;
-}
-
-.content-info h3 {
-    font-size: 14px;
-    font-family: 'Merriweather';
-    font-weight: 600;
-    letter-spacing: 4%;
-    margin:0;
+     line-height:22px;
     color: #2D3C4B;
 }
 
