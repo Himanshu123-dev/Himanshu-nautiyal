@@ -39,7 +39,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "sticky-header.header-wrapper {background-color: #D4B6B466 !important; border-bottom: none;}"
+        "sticky-header.header-wrapper {background-color: #d4b6b466 !important;}"
       ],
       "settings": {
         "logo_position": "middle-left",
